@@ -1,0 +1,220 @@
+<%- include('partials/header') %>
+
+    <!-- Page Title -->
+    <section style="background: var(--primary-color); color: white; padding: 60px 0; text-align: center;">
+        <div class="container" data-aos="fade-down">
+            <h1>About Infranex Publishers</h1>
+            <p style="opacity: 0.8; margin-top: 10px;">Our mission is to empower authors and amplify voices.</p>
+        </div>
+    </section>
+
+    <!-- Company Intro -->
+    <section>
+        <div class="container">
+            <div class="responsive-grid">
+                <div data-aos="fade-right">
+                    <h2 style="margin-bottom: 20px;">Dedicated to the Craft of Storytelling</h2>
+                    <p style="margin-bottom: 20px;">Founded on the principle that every story deserves to be heard,
+                        Infranex Publishers has helped hundreds of authors transition from manuscript to bestseller. We
+                        don't just publish books; we nurture visions.</p>
+                    <p>Our team consists of industry veterans, from creative editors to strategic marketing experts, all
+                        working together to ensure your book achieves its maximum potential in a competitive market.</p>
+                </div>
+                <div data-aos="fade-left">
+                    <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&q=80&w=800"
+                        alt="Professional Team"
+                        style="width: 100%; height: 400px; object-fit: cover; border-radius: 20px; box-shadow: var(--shadow);">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission & Vision -->
+    <style>
+        .mission-vision-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
+            max-width: 950px;
+            margin: 0 auto;
+        }
+
+        .m-v-card {
+            background: #FFFFFF;
+            padding: 55px 50px;
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.04);
+            position: relative;
+            z-index: 1;
+            overflow: hidden;
+            transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+            transform: translateY(0);
+        }
+
+        /* The Colored Left Border Line */
+        .m-v-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            width: 4px;
+            background-color: var(--accent-color);
+            transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+            z-index: 2;
+        }
+
+        /* Subtle Background Gradient Overlay on Hover */
+        .m-v-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(90deg, var(--accent-color-light) 0%, rgba(255, 255, 255, 0) 100%);
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            z-index: 1;
+            border-radius: 12px;
+        }
+
+        /* Hover States for the Card */
+        .m-v-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 50px var(--accent-shadow);
+        }
+
+        .m-v-card:hover::before {
+            width: 8px;
+            box-shadow: 4px 0 20px var(--accent-color);
+        }
+
+        .m-v-card:hover::after {
+            opacity: 1;
+        }
+
+        .m-v-content {
+            position: relative;
+            z-index: 3;
+            transition: transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        /* Content shifts slightly right on hover */
+        .m-v-card:hover .m-v-content {
+            transform: translateX(10px);
+        }
+
+        .m-v-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: #2D2D2D;
+            font-weight: 800;
+            margin-bottom: 20px;
+            transition: color 0.4s ease;
+        }
+
+        /* Title color shifts to match accent color */
+        .m-v-card:hover .m-v-title {
+            color: var(--accent-color);
+        }
+
+        .m-v-text {
+            color: #4A4A4A;
+            font-size: 1rem;
+            line-height: 1.7;
+            margin: 0;
+            font-weight: 500;
+            transition: color 0.4s ease;
+        }
+
+        .m-v-card:hover .m-v-text {
+            color: #1a1a1a;
+        }
+
+        @media (max-width: 640px) {
+            .m-v-card {
+                padding: 40px 30px;
+            }
+
+            .mission-vision-container {
+                gap: 20px;
+            }
+        }
+    </style>
+
+    <section style="background: #fdfcf0; padding: 100px 0;">
+        <div class="container">
+            <div class="mission-vision-container">
+                <!-- Mission Card -->
+                <div class="m-v-card" data-aos="fade-up"
+                    style="--accent-color: #dcb348; --accent-color-light: rgba(220,179,72,0.05); --accent-shadow: rgba(220,179,72,0.15);">
+                    <div class="m-v-content">
+                        <h3 class="m-v-title">Our Mission</h3>
+                        <p class="m-v-text">To provide authors with a seamless, high-quality publishing experience that
+                            combines creative freedom with professional excellence.</p>
+                    </div>
+                </div>
+                <!-- Vision Card -->
+                <div class="m-v-card" data-aos="fade-up" data-aos-delay="100"
+                    style="--accent-color: #392b60; --accent-color-light: rgba(57,43,96,0.03); --accent-shadow: rgba(57,43,96,0.15);">
+                    <div class="m-v-content">
+                        <h3 class="m-v-title">Our Vision</h3>
+                        <p class="m-v-text">To be the global leader in independent publishing, setting the standard for
+                            quality, transparency, and author success.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Values -->
+    <section>
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 60px;">
+                <h2 data-aos="fade-up">Our Core Values</h2>
+            </div>
+            <div
+                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; text-align: center;">
+                <div data-aos="fade-up">
+                    <div style="font-size: 3rem; color: var(--secondary-color);">💎</div>
+                    <h4 style="margin-top: 15px;">Quality First</h4>
+                    <p>We never compromise on the standards of editing and design.</p>
+                </div>
+                <div data-aos="fade-up" data-aos-delay="100">
+                    <div style="font-size: 3rem; color: var(--secondary-color);">🤝</div>
+                    <h4 style="margin-top: 15px;">Transparency</h4>
+                    <p>No hidden fees. Full ownership remains with the author.</p>
+                </div>
+                <div data-aos="fade-up" data-aos-delay="200">
+                    <div style="font-size: 3rem; color: var(--secondary-color);">🚀</div>
+                    <h4 style="margin-top: 15px;">Innovation</h4>
+                    <p>Utilizing the latest digital tools for marketing and distribution.</p>
+                </div>
+                <div data-aos="fade-up" data-aos-delay="300">
+                    <div style="font-size: 3rem; color: var(--secondary-color);">⭐</div>
+                    <h4 style="margin-top: 15px;">Author-Centric</h4>
+                    <p>Your vision is the heartbeat of everything we do.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Inline styles for responsiveness -->
+    <style>
+        .responsive-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        @media (max-width: 768px) {
+            .responsive-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+    </style>
+
+    <%- include('partials/footer') %>

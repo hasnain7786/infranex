@@ -1,0 +1,485 @@
+<%- include('partials/header') %>
+
+    <!-- Page Title -->
+    <section style="background: var(--primary-color); color: white; padding: 60px 0; text-align: center;">
+        <div class="container" data-aos="fade-down">
+            <h1>Publishing Packages</h1>
+            <p style="opacity: 0.8; margin-top: 10px;">Transparent pricing for every budget and goal.</p>
+        </div>
+    </section>
+
+    <!-- Pricing Tables -->
+    <section>
+        <div class="container">
+            <div
+                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; align-items: start;">
+
+                <!-- Basic -->
+                <div class="pricing-card" data-aos="fade-up">
+                    <div class="pricing-card__header">
+                        <h2 class="pricing-card__title">Basic</h2>
+                        <p class="pricing-card__subtitle">Perfect for self-starting authors.</p>
+                    </div>
+                    <div class="pricing-card__body">
+                        <p class="pricing-card__included-label">What's Included:</p>
+                        <ul class="pricing-card__features">
+                            <li>Professional Formatting</li>
+                            <li>Standard Cover Design</li>
+                            <li>Global eBook Distribution</li>
+                            <li>1 ISBN</li>
+                            <li>Author Bio Page</li>
+                            <li>Publishing on 3 Platforms</li>
+                        </ul>
+                    </div>
+                    <div class="pricing-card__footer">
+                        <hr class="pricing-card__divider">
+                        <button class="pricing-card__cta" onclick="openModal('Basic')">
+                            <span>CHOOSE BASIC</span>
+                            <span class="pricing-card__cta-icon"></span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Professional -->
+                <div class="pricing-card pricing-card--featured" data-aos="fade-up" data-aos-delay="100">
+                    <div class="pricing-card__badge">POPULAR</div>
+                    <div class="pricing-card__header">
+                        <h2 class="pricing-card__title">Professional</h2>
+                        <p class="pricing-card__subtitle">The complete publishing experience.</p>
+                    </div>
+                    <div class="pricing-card__body">
+                        <p class="pricing-card__included-label">What's Included:</p>
+                        <ul class="pricing-card__features">
+                            <li>Copyediting &amp; Proofreading</li>
+                            <li>Premium Cover Design (Front, spine, and back)</li>
+                            <li>Print &amp; eBook Distribution</li>
+                            <li>Copyright Registration</li>
+                            <li>Author Website (1 Page)</li>
+                            <li>Publishing on 5 Leading Platforms</li>
+                        </ul>
+                    </div>
+                    <div class="pricing-card__footer">
+                        <hr class="pricing-card__divider">
+                        <button class="pricing-card__cta pricing-card__cta--featured"
+                            onclick="openModal('Professional')">
+                            <span>CHOOSE PROFESSIONAL</span>
+                            <span class="pricing-card__cta-icon"></span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Premium -->
+                <div class="pricing-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="pricing-card__header">
+                        <h2 class="pricing-card__title">Premium</h2>
+                        <p class="pricing-card__subtitle">For the aspiring bestseller.</p>
+                    </div>
+                    <div class="pricing-card__body">
+                        <p class="pricing-card__included-label">What's Included:</p>
+                        <ul class="pricing-card__features">
+                            <li>Developmental Editing</li>
+                            <li>Ghostwriter Consultation</li>
+                            <li>Multi-channel Marketing</li>
+                            <li>50 Author Copies (Print)</li>
+                            <li>Full PR Support</li>
+                            <li>International Rights Help</li>
+                        </ul>
+                    </div>
+                    <div class="pricing-card__footer">
+                        <hr class="pricing-card__divider">
+                        <button class="pricing-card__cta" onclick="openModal('Premium')">
+                            <span>CHOOSE PREMIUM</span>
+                            <span class="pricing-card__cta-icon"></span>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <style>
+        /* ── Pricing Card Layout ── */
+        .pricing-card {
+            background: #fff;
+            border: 1.5px solid #e8e8e8;
+            border-radius: 16px;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.07);
+            position: relative;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
+        }
+
+        /* Popular / Featured card */
+        .pricing-card--featured {
+            border-color: var(--secondary-color);
+            box-shadow: 0 8px 32px rgba(212, 175, 55, 0.18);
+        }
+
+        /* Badge */
+        .pricing-card__badge {
+            position: absolute;
+            top: 18px;
+            right: 18px;
+            background: var(--secondary-color);
+            color: #fff;
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            padding: 4px 14px;
+            border-radius: 50px;
+        }
+
+        /* Header */
+        .pricing-card__header {
+            padding: 36px 30px 24px;
+            border-bottom: 1.5px solid #f0f0f0;
+        }
+
+        .pricing-card__title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--text-color);
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .pricing-card__price {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            margin-bottom: 6px;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .pricing-card--featured .pricing-card__price {
+            color: var(--secondary-color);
+        }
+
+        .pricing-card__subtitle {
+            font-size: 0.92rem;
+            color: var(--text-muted);
+        }
+
+        /* Body */
+        .pricing-card__body {
+            padding: 28px 30px;
+            flex-grow: 1;
+        }
+
+        .pricing-card__included-label {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-color);
+            margin-bottom: 16px;
+        }
+
+        .pricing-card__features {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .pricing-card__features li {
+            font-size: 0.93rem;
+            color: #444;
+            padding: 8px 0 8px 18px;
+            position: relative;
+            line-height: 1.5;
+            border-bottom: none;
+        }
+
+        .pricing-card__features li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--text-muted);
+        }
+
+        .pricing-card--featured .pricing-card__features li::before {
+            background: var(--secondary-color);
+        }
+
+        /* Footer */
+        .pricing-card__footer {
+            padding: 0 30px 30px;
+        }
+
+        .pricing-card__divider {
+            border: none;
+            border-top: 1.5px solid #e8e8e8;
+            margin-bottom: 18px;
+        }
+
+        .pricing-card__discuss {
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            margin-bottom: 4px;
+        }
+
+        .pricing-card__chat {
+            display: block;
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--text-color);
+            text-decoration: underline;
+            margin-bottom: 18px;
+            cursor: pointer;
+        }
+
+        .pricing-card__chat:hover {
+            color: var(--primary-color);
+        }
+
+        /* CTA Button — pill with circle icon */
+        .pricing-card__cta {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            background: var(--primary-color);
+            color: #fff;
+            border: none;
+            border-radius: 50px;
+            padding: 14px 14px 14px 24px;
+            font-size: 0.88rem;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+        }
+
+        .pricing-card__cta:hover {
+            background: var(--primary-light);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(61, 44, 94, 0.25);
+        }
+
+        .pricing-card__cta--featured {
+            background: var(--secondary-color);
+        }
+
+        .pricing-card__cta--featured:hover {
+            background: var(--secondary-dark);
+            box-shadow: 0 8px 20px rgba(212, 175, 55, 0.35);
+        }
+
+        .pricing-card__cta-icon {
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            background: rgba(0, 0, 0, 0.25);
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .pricing-card__cta-icon::after {
+            content: '→';
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.85);
+            line-height: 1;
+        }
+
+        /* ── Shared Lead Form Styles (modal) ── */
+        .lead-label {
+            display: block;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text-color);
+            margin-bottom: 6px;
+            letter-spacing: 0.3px;
+        }
+
+        .lead-input {
+            width: 100%;
+            padding: 12px 14px;
+            border: 1.5px solid #e5e5e5;
+            border-radius: 10px;
+            background: #fafafa;
+            font-size: 0.92rem;
+            color: var(--text-color);
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+            outline: none;
+            font-family: inherit;
+            box-sizing: border-box;
+        }
+
+        .lead-input:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(61, 44, 94, 0.08);
+            background: #fff;
+        }
+
+        textarea.lead-input {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .lead-submit-btn {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            background: var(--primary-color);
+            color: #fff;
+            border: none;
+            border-radius: 50px;
+            padding: 14px 14px 14px 28px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+        }
+
+        .lead-submit-btn:hover {
+            background: var(--primary-light);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(61, 44, 94, 0.25);
+        }
+
+        .lead-submit-icon {
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            background: rgba(0, 0, 0, 0.2);
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .lead-submit-icon::after {
+            content: '→';
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.85);
+        }
+
+        .lead-success {
+            margin-top: 16px;
+            padding: 12px 16px;
+            background: #f0fdf4;
+            border: 1px solid #86efac;
+            border-radius: 10px;
+            color: #166534;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .lead-error {
+            margin-top: 16px;
+            padding: 12px 16px;
+            background: #fef2f2;
+            border: 1px solid #fca5a5;
+            border-radius: 10px;
+            color: #991b1b;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+    </style>
+
+    <!-- Inquiry Modal — Unified Lead Form -->
+    <div id="inquiryModal"
+        style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.65); z-index: 2000; align-items: center; justify-content: center; backdrop-filter: blur(4px);">
+        <div
+            style="background: white; padding: 40px; border-radius: 20px; max-width: 520px; width: 90%; position: relative; box-shadow: 0 24px 64px rgba(0,0,0,0.25); max-height: 90vh; overflow-y: auto;">
+            <button onclick="closeModal()"
+                style="position: absolute; top: 16px; right: 18px; background: none; border: none; font-size: 22px; cursor: pointer; color: #999; line-height: 1;">&times;</button>
+
+            <h3 id="modalTitle" style="margin-bottom: 4px; font-family: 'Playfair Display', serif;">Inquire About
+                Package</h3>
+            <p style="color: var(--text-muted); font-size: 0.88rem; margin-bottom: 24px;">We'll get back to you within
+                24 hours with full details.</p>
+
+            <form action="/leads" method="POST">
+                <!-- Hidden fields -->
+                <input type="hidden" name="source" value="pricing">
+                <input type="hidden" name="package" id="packageInput" value="">
+
+                <!-- Name + Email -->
+                <div class="form-row" style="margin-bottom: 14px;">
+                    <div>
+                        <label class="lead-label">Full Name *</label>
+                        <input type="text" name="name" required placeholder="John Smith" class="lead-input">
+                    </div>
+                    <div>
+                        <label class="lead-label">Email Address *</label>
+                        <input type="email" name="email" required placeholder="john@email.com" class="lead-input">
+                    </div>
+                </div>
+
+                <!-- Phone -->
+                <div style="margin-bottom: 14px;">
+                    <label class="lead-label">Phone Number</label>
+                    <input type="tel" name="phone" placeholder="+1 234 567 8900" class="lead-input">
+                </div>
+
+                <!-- Message -->
+                <div style="margin-bottom: 22px;">
+                    <label class="lead-label">Tell us about your book *</label>
+                    <textarea name="message" required
+                        placeholder="Give us a brief idea of your project, genre, word count, or anything else relevant..."
+                        class="lead-input" style="height: 110px;"></textarea>
+                </div>
+
+                <button type="submit" class="lead-submit-btn">
+                    <span>Submit Inquiry</span>
+                    <span class="lead-submit-icon"></span>
+                </button>
+
+                <% if (typeof query !=='undefined' && query.success) { %>
+                    <div class="lead-success">
+                        ✅ Inquiry sent! We'll be in touch within 24 hours.
+                    </div>
+                    <% } %>
+                        <% if (typeof query !=='undefined' && query.error) { %>
+                            <div class="lead-error">
+                                ⚠️ Something went wrong. Please try again or email us directly.
+                            </div>
+                            <% } %>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function openModal(pkg) {
+            document.getElementById('inquiryModal').style.display = 'flex';
+            document.getElementById('modalTitle').innerText = 'Inquire About ' + pkg + ' Package';
+            document.getElementById('packageInput').value = pkg;
+        }
+        function closeModal() {
+            document.getElementById('inquiryModal').style.display = 'none';
+        }
+    </script>
+
+    <style>
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+        }
+
+        @media (max-width: 600px) {
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+
+    <%- include('partials/footer') %>

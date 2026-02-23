@@ -1,0 +1,534 @@
+<%- include('partials/header') %>
+
+    <!-- Page Title -->
+    <section style="background: var(--primary-color); color: white; padding: 60px 0; text-align: center;">
+        <div class="container" data-aos="fade-down">
+            <h1>Premium eBook Publishing</h1>
+            <p style="opacity: 0.8; margin-top: 10px;">Reach a global audience with flawlessly formatted digital books.
+            </p>
+        </div>
+    </section>
+
+    <!-- eBook Intro -->
+    <section>
+        <div class="container">
+            <div class="responsive-grid">
+                <div data-aos="fade-right">
+                    <h2>The Digital Revolution of Reading</h2>
+                    <p style="margin: 20px 0;">In today's fast-paced world, eBooks are a vital part of an author's
+                        success. We ensure your book looks beautiful on every screen, from the smallest smartphone to
+                        the largest tablet.</p>
+                    <div style="background: var(--secondary-color); height: 5px; width: 60px; margin-bottom: 25px;">
+                    </div>
+                    <ul style="list-style: none;">
+                        <li style="margin-bottom: 12px;">✅ <strong>Global Reach:</strong> Instant access for readers
+                            worldwide.</li>
+                        <li style="margin-bottom: 12px;">✅ <strong>Higher Royalties:</strong> Lower production costs
+                            mean more for you.</li>
+                        <li style="margin-bottom: 12px;">✅ <strong>Interactive Features:</strong> Internal links,
+                            searchable text, and more.</li>
+                    </ul>
+                </div>
+                <div data-aos="fade-left">
+                    <img src="https://images.unsplash.com/photo-1592496001020-d31bd830651f?auto=format&fit=crop&q=80&w=800"
+                        alt="eBook Devices"
+                        style="width: 100%; height: 400px; object-fit: cover; border-radius: 20px; box-shadow: var(--shadow);">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Supported Formats -->
+    <style>
+        .format-card {
+            background: #FFFFFF;
+            padding: 50px 30px;
+            text-align: center;
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.03);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            /* Constant breathing float */
+            animation: cardBreathing 4s ease-in-out infinite alternate;
+            border: 1px solid transparent;
+        }
+
+        /* Stagger the animations so they feel organic */
+        .format-card:nth-child(2) {
+            animation-delay: 1.2s;
+        }
+
+        .format-card:nth-child(3) {
+            animation-delay: 2.4s;
+        }
+
+        @keyframes cardBreathing {
+            0% {
+                transform: translateY(0);
+                box-shadow: 0 10px 40px rgba(0, 0, 0, 0.03);
+            }
+
+            100% {
+                transform: translateY(-8px);
+                box-shadow: 0 20px 45px rgba(139, 113, 214, 0.08);
+            }
+        }
+
+        /* Glass Shimmer Effect */
+        .format-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -150%;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.8) 50%, rgba(255, 255, 255, 0) 100%);
+            transform: skewX(-25deg);
+            z-index: 10;
+        }
+
+        .format-card:hover::after {
+            animation: shine 0.8s ease-out forwards;
+        }
+
+        @keyframes shine {
+            0% {
+                left: -150%;
+            }
+
+            100% {
+                left: 200%;
+            }
+        }
+
+        /* Enhanced Hover State */
+        .format-card:hover {
+            transform: translateY(-20px) scale(1.03) !important;
+            box-shadow: 0 25px 60px rgba(139, 113, 214, 0.25) !important;
+            border: 1px solid rgba(139, 113, 214, 0.3);
+            animation-play-state: paused;
+        }
+
+        .format-icon-container {
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 25px;
+            filter: drop-shadow(0 5px 5px rgba(0, 0, 0, 0.05));
+            transition: filter 0.4s ease;
+        }
+
+        .format-card:hover .format-icon-container {
+            filter: drop-shadow(0 15px 15px rgba(139, 113, 214, 0.4));
+        }
+
+        .format-icon {
+            transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .format-card:hover .format-icon {
+            transform: scale(1.25) rotate(8deg);
+        }
+
+        .floating-icon {
+            animation: floatIcon 3s ease-in-out infinite alternate;
+        }
+
+        @keyframes floatIcon {
+            0% {
+                transform: translateY(-4px);
+            }
+
+            100% {
+                transform: translateY(6px);
+            }
+        }
+    </style>
+
+    <section style="background: #fdfcf0; padding: 100px 0;">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 55px;">
+                <h2 data-aos="fade-up"
+                    style="font-family: 'Playfair Display', serif; font-size: 2.2rem; color: #333; margin-bottom: 12px; font-weight: 700;">
+                    Supported Formats</h2>
+                <p data-aos="fade-up" data-aos-delay="100" style="color: #666; font-size: 1rem; font-weight: 500;">
+                    Optimized for every major platform.</p>
+            </div>
+            <div
+                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 35px; max-width: 1050px; margin: 0 auto;">
+
+                <!-- Kindle -->
+                <div class="format-card" data-aos="zoom-up" data-aos-delay="100">
+                    <div class="format-icon-container floating-icon" style="animation-delay: 0s;">
+                        <svg class="format-icon" width="24" height="40" viewBox="0 0 24 40" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <rect x="1" y="1" width="22" height="38" rx="3" fill="#1A1A1A" stroke="#1A1A1A"
+                                stroke-width="2" />
+                            <rect x="5" y="6" width="3" height="3" rx="0.5" fill="#4CAF50" />
+                            <rect x="10.5" y="6" width="3" height="3" rx="0.5" fill="#2196F3" />
+                            <rect x="16" y="6" width="3" height="3" rx="0.5" fill="#FFC107" />
+                            <rect x="5" y="11" width="3" height="3" rx="0.5" fill="#E91E63" />
+                            <rect x="10.5" y="11" width="3" height="3" rx="0.5" fill="#00BCD4" />
+                            <rect x="16" y="11" width="3" height="3" rx="0.5" fill="#FF9800" />
+                            <rect x="5" y="16" width="3" height="3" rx="0.5" fill="#9C27B0" />
+                            <rect x="10.5" y="16" width="3" height="3" rx="0.5" fill="#8BC34A" />
+                            <rect x="16" y="16" width="3" height="3" rx="0.5" fill="#03A9F4" />
+                            <rect x="5" y="21" width="3" height="3" rx="0.5" fill="#FFEB3B" />
+                            <rect x="10.5" y="21" width="3" height="3" rx="0.5" fill="#F44336" />
+                            <rect x="16" y="21" width="3" height="3" rx="0.5" fill="#795548" />
+                            <rect x="10" y="32" width="4" height="4" rx="2" fill="#333333" />
+                        </svg>
+                    </div>
+                    <h4
+                        style="font-family: 'Playfair Display', serif; font-size: 1.1rem; color: #2D2D2D; margin-bottom: 12px; font-weight: 800;">
+                        Kindle (KPF/MOBI)</h4>
+                    <p style="color: #666; font-size: 0.95rem; line-height: 1.6; margin: 0;">Purely optimized for the
+                        world's most<br>popular eReader platform.</p>
+                </div>
+
+                <!-- EPUB -->
+                <div class="format-card" data-aos="zoom-up" data-aos-delay="200">
+                    <div class="format-icon-container floating-icon" style="animation-delay: 0.3s;">
+                        <svg class="format-icon" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#4198D7"
+                            stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <line x1="2" y1="12" x2="22" y2="12"></line>
+                            <path
+                                d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z">
+                            </path>
+                        </svg>
+                    </div>
+                    <h4
+                        style="font-family: 'Playfair Display', serif; font-size: 1.1rem; color: #2D2D2D; margin-bottom: 12px; font-weight: 800;">
+                        EPUB</h4>
+                    <p style="color: #666; font-size: 0.95rem; line-height: 1.6; margin: 0;">Standard format for Apple
+                        Books,<br>Google Play, Barnes & Noble, and<br>more.</p>
+                </div>
+
+                <!-- Interactive PDF -->
+                <div class="format-card" data-aos="zoom-up" data-aos-delay="300">
+                    <div class="format-icon-container floating-icon" style="animation-delay: 0.6s;">
+                        <svg class="format-icon" width="28" height="36" viewBox="0 0 24 28" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M15 2H4C2.89543 2 2 2.89543 2 4V24C2 25.1046 2.89543 26 4 26H20C21.1046 26 22 25.1046 22 24V9L15 2Z"
+                                fill="#E8e8e8" />
+                            <path d="M15 2L22 9H15V2Z" fill="#C4C4C4" />
+                            <rect x="6" y="13" width="12" height="1" fill="#999999" />
+                            <rect x="6" y="16" width="12" height="1" fill="#999999" />
+                            <rect x="6" y="19" width="8" height="1" fill="#999999" />
+                        </svg>
+                    </div>
+                    <h4
+                        style="font-family: 'Playfair Display', serif; font-size: 1.1rem; color: #2D2D2D; margin-bottom: 12px; font-weight: 800;">
+                        Interactive PDF</h4>
+                    <p style="color: #666; font-size: 0.95rem; line-height: 1.6; margin: 0;">Perfect for direct sales
+                        and fixed-<br>layout non-fiction books.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- eBook Process -->
+    <section style="padding: 100px 0; background: #ffffff; overflow: hidden;">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 80px;">
+                <h2 data-aos="fade-up"
+                    style="font-family: 'Playfair Display', serif; font-size: 2.2rem; color: #2D2D2D; margin-bottom: 15px; font-weight: 700;">
+                    Our eBook Workflow</h2>
+                <p data-aos="fade-up" data-aos-delay="100"
+                    style="color: #666; font-size: 1rem; max-width: 600px; margin: 0 auto;">A seamless, professional
+                    process converting your manuscript into a globally formatted digital book.</p>
+            </div>
+
+            <div class="workflow-container">
+                <div class="workflow-text" data-aos="fade-right">
+                    <div class="workflow-step-text">
+                        <div class="step-line-indicator"></div>
+                        <h4
+                            style="color: #2D2D2D; font-family: 'Playfair Display', serif; font-size: 1.4rem; margin-bottom: 8px; font-weight: 700;">
+                            Reflowable Formatting</h4>
+                        <p style="color: #666; font-size: 0.95rem; line-height: 1.7; margin: 0;">We convert your
+                            manuscript into a reflowable layout that adapts to any screen size and user font preference,
+                            ensuring universal readability.</p>
+                    </div>
+
+                    <div class="workflow-step-text">
+                        <div class="step-line-indicator"></div>
+                        <h4
+                            style="color: #2D2D2D; font-family: 'Playfair Display', serif; font-size: 1.4rem; margin-bottom: 8px; font-weight: 700;">
+                            Fixed Layout (Optional)</h4>
+                        <p style="color: #666; font-size: 0.95rem; line-height: 1.7; margin: 0;">For children's books or
+                            photography books, we preserve the exact design using advanced fixed-layout technology.</p>
+                    </div>
+
+                    <div class="workflow-step-text">
+                        <div class="step-line-indicator"></div>
+                        <h4
+                            style="color: #2D2D2D; font-family: 'Playfair Display', serif; font-size: 1.4rem; margin-bottom: 8px; font-weight: 700;">
+                            Multi-Device Testing</h4>
+                        <p style="color: #666; font-size: 0.95rem; line-height: 1.7; margin: 0;">We test your eBook on
+                            Kindles, iPads, Android tablets, and various eReader apps to ensure flawless presentation
+                            worldwide.</p>
+                    </div>
+                </div>
+
+                <div class="workflow-graphic" data-aos="fade-left" data-aos-delay="200">
+                    <div class="workflow-illustration">
+                        <div
+                            style="width: 280px; height: 280px; background: #fbfaff; border-radius: 50%; display: flex; align-items: center; justify-content: center; position: relative; box-shadow: 0 10px 40px rgba(139, 113, 214, 0.1);">
+                            <!-- Document -->
+                            <svg width="120" height="150" viewBox="0 0 24 28" fill="none"
+                                style="position: absolute; transform: rotate(-8deg); left: 50px; top: 40px; z-index: 2;">
+                                <path
+                                    d="M15 2H4C2.89543 2 2 2.89543 2 4V24C2 25.1046 2.89543 26 4 26H20C21.1046 26 22 25.1046 22 24V9L15 2Z"
+                                    fill="#ffffff" stroke="#8b71d6" stroke-width="1.5" />
+                                <path d="M15 2L22 9H15V2Z" fill="#f4f2fb" stroke="#8b71d6" stroke-width="1.5" />
+                                <rect x="6" y="10" width="8" height="1.5" fill="#8b71d6" />
+                                <rect x="6" y="14" width="12" height="1.5" fill="#8b71d6" />
+                                <rect x="6" y="18" width="12" height="1.5" fill="#8b71d6" />
+                            </svg>
+
+                            <!-- Mobile/Tablet -->
+                            <svg width="100" height="140" viewBox="0 0 24 34" fill="none"
+                                style="position: absolute; right: 35px; bottom: 25px; z-index: 3;">
+                                <rect x="2" y="2" width="20" height="30" rx="3" fill="#ffffff" stroke="#a491d9"
+                                    stroke-width="1.5" box-shadow="0 5px 15px rgba(0,0,0,0.1)" />
+                                <rect x="4" y="5" width="16" height="20" rx="1" fill="#f4f2fb" />
+                                <circle cx="12" cy="29" r="1.5" fill="#a491d9" />
+                                <polygon points="10,12 15,15 10,18" fill="#8b71d6" />
+                            </svg>
+
+                            <!-- Decor elements -->
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none"
+                                style="position: absolute; left: 20px; top: 50px; z-index: 1; animation: floatNode 4s infinite alternate reverse;">
+                                <path d="M12 2L13.5 10.5L22 12L13.5 13.5L12 22L10.5 13.5L2 12L10.5 10.5L12 2Z"
+                                    fill="#ffc107" opacity="0.6" />
+                            </svg>
+                            <svg width="30" height="30" viewBox="0 0 24 24" fill="none"
+                                style="position: absolute; right: 40px; top: 10px; z-index: 1; animation: floatNode 3s infinite alternate;">
+                                <circle cx="12" cy="12" r="8" stroke="#00BCD4" stroke-width="2" stroke-dasharray="2 2"
+                                    fill="none" />
+                            </svg>
+                        </div>
+                    </div>
+
+                    <div class="workflow-circle">
+                        <div class="workflow-curve-half"></div>
+                        <div class="workflow-node node-1">
+                            <div class="node-inner">STEP<br>01</div>
+                        </div>
+                        <div class="workflow-node node-2">
+                            <div class="node-inner">STEP<br>02</div>
+                        </div>
+                        <div class="workflow-node node-3">
+                            <div class="node-inner">STEP<br>03</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <style>
+        .workflow-container {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 80px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .workflow-text {
+            flex: 1;
+            min-width: 320px;
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        .workflow-graphic {
+            flex: 1.2;
+            min-width: 380px;
+            position: relative;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .workflow-illustration {
+            position: relative;
+            z-index: 2;
+        }
+
+        .workflow-circle {
+            position: absolute;
+            width: 350px;
+            height: 350px;
+            right: 0px;
+            top: 50%;
+            margin-top: -175px;
+            z-index: 1;
+        }
+
+        .workflow-curve-half {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            border: 3px dotted #b8a6e8;
+            border-radius: 50%;
+            clip-path: polygon(50% -10%, 110% -10%, 110% 110%, 50% 110%);
+        }
+
+        .workflow-node {
+            position: absolute;
+            width: 70px;
+            height: 70px;
+            background: #ffffff;
+            border-radius: 50%;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 3;
+            animation: floatNode 3s ease-in-out infinite alternate;
+        }
+
+        .workflow-node .node-inner {
+            width: 56px;
+            height: 56px;
+            background: #8b71d6;
+            border-radius: 50%;
+            color: white;
+            font-size: 0.8rem;
+            font-weight: 800;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            line-height: 1.1;
+            letter-spacing: 0.5px;
+            box-shadow: inset 0 -3px 0 rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s;
+        }
+
+        .workflow-node:hover .node-inner {
+            transform: scale(1.1);
+            background: #7359c1;
+        }
+
+        .workflow-node.node-1 {
+            left: 227.5px;
+            top: -11.55px;
+            animation-delay: 0s;
+        }
+
+        .workflow-node.node-2 {
+            left: 315px;
+            top: 140px;
+            animation-delay: 1s;
+        }
+
+        .workflow-node.node-3 {
+            left: 227.5px;
+            top: 291.55px;
+            animation-delay: 2s;
+        }
+
+        @keyframes floatNode {
+            0% {
+                transform: translateY(-6px);
+            }
+
+            100% {
+                transform: translateY(6px);
+            }
+        }
+
+        .workflow-step-text {
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .step-line-indicator {
+            position: absolute;
+            left: 0;
+            top: 5px;
+            bottom: -5px;
+            width: 3px;
+            background: #f4f2fb;
+            border-radius: 3px;
+            transition: background 0.3s;
+        }
+
+        .workflow-step-text:hover .step-line-indicator {
+            background: #8b71d6;
+        }
+
+        @media (max-width: 900px) {
+            .workflow-graphic {
+                min-width: 100%;
+                height: 380px;
+                margin-bottom: 40px;
+            }
+
+            .workflow-container {
+                flex-direction: column-reverse;
+                gap: 20px;
+            }
+
+            .workflow-circle {
+                left: 50%;
+                transform: translateX(-50%);
+                right: auto;
+                margin-left: 20px;
+            }
+        }
+
+        @media (max-width: 500px) {
+            .workflow-graphic {
+                height: 320px;
+            }
+
+            .workflow-circle {
+                transform: translateX(-50%) scale(0.85);
+                margin-left: 10px;
+            }
+        }
+    </style>
+
+    <!-- CTA -->
+    <section style="background: var(--primary-color); color: white; text-align: center; padding: 80px 0;">
+        <div class="container" data-aos="zoom-in">
+            <h2>Go Digital Today</h2>
+            <p style="margin: 20px 0 30px; opacity: 0.9;">Professional eBook conversion starts here.</p>
+            <a href="/pricing" class="btn btn-secondary">View Pricing</a>
+        </div>
+    </section>
+
+    <style>
+        .responsive-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        @media (max-width: 768px) {
+            .responsive-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+    </style>
+
+    <%- include('partials/footer') %>
