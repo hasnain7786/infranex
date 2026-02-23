@@ -32,8 +32,8 @@ router.post('/login', async (req, res) => {
         req.session.adminId = admin._id;
         res.redirect('/admin/dashboard');
     } catch (err) {
-        console.error('Admin login error:', err);
-        res.redirect('/admin/login?error=Server error');
+        console.error('Admin login error:', err.message);
+        res.redirect(`/admin/login?error=Server error: ${encodeURIComponent(err.message)}`);
     }
 });
 
