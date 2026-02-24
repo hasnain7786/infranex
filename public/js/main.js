@@ -45,7 +45,9 @@ if (mobileMenuBtn) {
 // Close mobile menu when a link is clicked
 document.querySelectorAll('.nav-links a').forEach(link => {
     link.addEventListener('click', () => {
-        mobileMenuBtn.classList.remove('active');
-        navLinks.classList.remove('active');
+        if (mobileMenuBtn && mobileMenuBtn.classList.contains('active')) {
+            mobileMenuBtn.classList.remove('active');
+            navLinks.classList.remove('active');
+        }
     });
 });

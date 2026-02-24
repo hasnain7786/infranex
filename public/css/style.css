@@ -20,12 +20,16 @@
     box-sizing: border-box;
 }
 
+html,
+body {
+    overflow-x: hidden;
+}
+
 body {
     font-family: 'Inter', sans-serif;
     background-color: var(--bg-color);
     color: var(--text-color);
     line-height: 1.6;
-    overflow-x: hidden;
 }
 
 h1,
@@ -164,7 +168,7 @@ header.scrolled {
 }
 
 .logo-image {
-    height: 100px;
+    height: 110px;
     width: auto;
     display: block;
     transition: var(--transition);
@@ -437,7 +441,8 @@ footer {
     .nav-links {
         position: fixed;
         top: 0;
-        right: -110%;
+        right: 0;
+        transform: translateX(120%);
         width: 80%;
         max-width: 360px;
         height: 100vh;
@@ -446,14 +451,14 @@ footer {
         justify-content: center;
         align-items: center;
         box-shadow: -10px 0 30px rgba(0, 0, 0, 0.1);
-        transition: right 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         z-index: 2000;
         gap: 25px;
         overflow-y: auto;
     }
 
     .nav-links.active {
-        right: 0;
+        transform: translateX(0);
     }
 
     .nav-links a {
@@ -486,7 +491,22 @@ footer {
 
     /* Logo smaller on tablet */
     .logo-image {
-        height: 75px;
+        height: 95px;
+    }
+
+    /* Page title sections */
+    section[style*="padding: 60px 0"] {
+        padding: 50px 0 !important;
+    }
+
+    /* Services flip grid */
+    .flip-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+
+    /* Pricing cards */
+    .pricing-card__header {
+        padding: 28px 22px 18px !important;
     }
 }
 
@@ -527,7 +547,7 @@ footer {
 
     /* Hero */
     .hero {
-        padding: 100px 0 70px !important;
+        padding: 110px 0 70px !important;
     }
 
     .hero .container {
@@ -566,11 +586,78 @@ footer {
 
     /* Logo sizes */
     .logo-image {
-        height: 60px;
+        height: 80px;
     }
 
     .footer-logo-image {
         height: 100px;
+    }
+
+    /* Contact grid */
+    .contact-grid {
+        grid-template-columns: 1fr !important;
+        gap: 40px !important;
+    }
+
+    /* eBook responsive grid */
+    .responsive-grid {
+        grid-template-columns: 1fr !important;
+        gap: 30px !important;
+    }
+
+    /* Workflow container */
+    .workflow-container {
+        flex-direction: column-reverse !important;
+        gap: 20px !important;
+    }
+
+    .workflow-graphic {
+        min-width: 100% !important;
+        height: 300px !important;
+    }
+
+    /* Services flip cards */
+    .flip-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    .flip-card {
+        height: 300px;
+    }
+
+    /* Portfolio grid */
+    .portfolio-img {
+        height: 280px !important;
+    }
+
+    /* Pricing */
+    .pricing-card__title {
+        font-size: 1.5rem !important;
+    }
+
+    /* About mission/vision */
+    .mission-vision-container {
+        grid-template-columns: 1fr !important;
+    }
+
+    /* Core values grid */
+    .m-v-card {
+        padding: 35px 25px !important;
+    }
+
+    /* Section padding reductions */
+    section {
+        padding: 50px 0 !important;
+    }
+
+    /* Hide workflow graphic on very small mobile */
+    .workflow-circle {
+        display: none !important;
+    }
+
+    /* Format cards in ebook page */
+    .format-card {
+        padding: 35px 20px !important;
     }
 
     /* Grids → single column */
@@ -626,11 +713,21 @@ footer {
         height: 250px !important;
     }
 
-    /* Tawk chat icon position */
-    #tawkchat-minified-box {
-        bottom: 20px !important;
-        right: 15px !important;
+    /* Tawk native chat mobile adjustments */
+    iframe[title*="chat"]:not([title*="status"]) {
+        transform: scale(0.9);
+        transform-origin: bottom left;
     }
+
+    /* Ensure Tawk widget stays left on mobile to avoid touching the drawer */
+    .tawk-min-container,
+    .tawk-widget,
+    iframe[src*="tawk"] {
+        left: 20px !important;
+        right: auto !important;
+        bottom: 20px !important;
+    }
+
 }
 
 /* ═══════════════════════════════════════════
@@ -650,8 +747,12 @@ footer {
         font-size: 1.5rem !important;
     }
 
+    h3 {
+        font-size: 1.15rem !important;
+    }
+
     .hero {
-        padding: 90px 0 60px !important;
+        padding: 95px 0 60px !important;
     }
 
     .hero h1 {
@@ -659,12 +760,48 @@ footer {
     }
 
     .logo-image {
-        height: 50px;
+        height: 65px;
     }
 
     .btn {
         padding: 11px 18px;
         font-size: 0.9rem;
+    }
+
+    /* CTA banner */
+    .cta-banner {
+        padding: 50px 0 !important;
+    }
+
+    /* Pricing CTA button text */
+    .pricing-card__cta {
+        font-size: 0.78rem !important;
+        padding: 12px 10px 12px 18px !important;
+    }
+
+    /* Modal padding */
+    #inquiryModal>div {
+        padding: 28px 20px !important;
+    }
+
+    /* Contact form padding */
+    .contact-grid>div:last-child {
+        padding: 25px 18px !important;
+    }
+
+    /* Testimonials */
+    .testimonial-card {
+        padding: 28px 20px !important;
+    }
+
+    /* Portfolio items */
+    .portfolio-img {
+        height: 230px !important;
+    }
+
+    /* flip cards */
+    .flip-card {
+        height: 270px !important;
     }
 
     /* Tables in admin — horizontal scroll */
@@ -675,6 +812,26 @@ footer {
     table {
         min-width: 600px;
     }
+
+    /* Format cards */
+    .format-card {
+        padding: 28px 15px !important;
+    }
+
+    /* Mission vision padding */
+    .m-v-card {
+        padding: 30px 20px !important;
+    }
+
+    /* About section responsive grid image */
+    .responsive-grid img {
+        height: 240px !important;
+    }
+
+    /* Section titles */
+    .section-title h2 {
+        font-size: 1.5rem !important;
+    }
 }
 
 /* ═══════════════════════════════════════════
@@ -682,6 +839,15 @@ footer {
 ═══════════════════════════════════════════ */
 @media (min-width: 1200px) {
     .logo-image {
-        height: 120px;
+        height: 130px;
+    }
+}
+
+/* ═══════════════════════════════════════════
+   EXTRA LARGE SCREENS (≥1400px)
+═══════════════════════════════════════════ */
+@media (min-width: 1400px) {
+    .logo-image {
+        height: 140px;
     }
 }

@@ -65,6 +65,23 @@
 <!--Start of Tawk.to Script-->
 <script type="text/javascript">
     var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+
+    // Position Tawk widget to the left on mobile to avoid overlapping the right-side drawer
+    Tawk_API.customStyle = {
+        visibility: {
+            desktop: {
+                position: 'br',
+                xOffset: '15px',
+                yOffset: '15px'
+            },
+            mobile: {
+                position: 'bl',
+                xOffset: '15px',
+                yOffset: '20px'
+            }
+        }
+    };
+
     (function () {
         var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
         s1.async = true;
