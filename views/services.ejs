@@ -218,7 +218,8 @@
             border-radius: 20px;
             backface-visibility: hidden;
             -webkit-backface-visibility: hidden;
-            overflow: hidden;
+            overflow-y: auto;
+            overflow-x: hidden;
         }
 
         /* ── FRONT face ── */
@@ -352,6 +353,20 @@
         .flip-card__cta:hover {
             color: var(--secondary-color);
             gap: 10px;
+        }
+
+        /* ── Custom scrollbar for cards ── */
+        .flip-card__back::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        .flip-card__back::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        .flip-card__back::-webkit-scrollbar-thumb {
+            background: rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
         }
     </style>
 
