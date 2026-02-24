@@ -321,14 +321,15 @@ textarea:focus {
 .main-footer {
     background: var(--primary-color);
     color: var(--white);
-    padding: 60px 0 30px;
+    padding: 0 0 30px;
     position: relative;
+    margin-top: 80px;
 }
 
 .footer-cta-wrapper {
     transform: translateY(-50%);
     padding: 0 20px;
-    margin-bottom: -50px;
+    margin-bottom: -20px;
 }
 
 .footer-cta {
