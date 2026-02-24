@@ -1043,7 +1043,7 @@ textarea:focus {
 
     /* flip cards */
     .flip-card {
-        height: 270px !important;
+        height: 320px !important;
     }
 
     /* Tables in admin — horizontal scroll */
