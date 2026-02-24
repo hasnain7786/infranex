@@ -321,9 +321,8 @@ textarea:focus {
 .main-footer {
     background: var(--primary-color);
     color: var(--white);
-    padding: 0 0 30px;
+    padding: 60px 0 30px;
     position: relative;
-    margin-top: 100px;
 }
 
 .footer-cta-wrapper {
