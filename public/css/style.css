@@ -567,6 +567,11 @@ textarea:focus {
     background: var(--primary-light);
 }
 
+/* ── Card Customization ── */
+.service-card {
+    text-align: center;
+}
+
 /* ── Card Hover Effects ── */
 .service-card:hover,
 .book-item:hover {
