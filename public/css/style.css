@@ -170,6 +170,7 @@ header.scrolled {
 .logo-image {
     height: 55px;
     width: auto;
+    flex-shrink: 0;
     display: block;
     transition: var(--transition);
     object-fit: contain;
@@ -178,6 +179,8 @@ header.scrolled {
 
 .footer-logo-image {
     height: 70px;
+    width: auto;
+    flex-shrink: 0;
     background-color: #fff;
     padding: 12px;
     border-radius: 12px;
