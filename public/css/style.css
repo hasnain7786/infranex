@@ -839,18 +839,32 @@ textarea:focus {
 
     /* Footer Mobile */
     .main-footer {
-        margin-top: 60px;
+        margin-top: 0;
+    }
+
+    .footer-cta-wrapper {
+        transform: none;
+        margin-bottom: 0;
+        padding: 0;
+        background: var(--primary-color);
     }
 
     .footer-cta {
         padding: 30px 20px;
         text-align: center;
         flex-direction: column;
-        gap: 20px;
+        gap: 18px;
+        border-radius: 0;
+        box-shadow: none;
+        margin: 0;
     }
 
     .footer-cta-text h2 {
-        font-size: 1.8rem;
+        font-size: 1.6rem;
+    }
+
+    .main-footer>.container {
+        padding-top: 50px;
     }
 
     .footer-content {
