@@ -321,15 +321,14 @@ textarea:focus {
 .main-footer {
     background: var(--primary-color);
     color: var(--white);
-    padding: 0 0 30px;
+    padding: 80px 0 30px;
     position: relative;
-    margin-top: 80px;
 }
 
 .footer-cta-wrapper {
-    transform: translateY(-50%);
+    transform: translateY(-60%);
     padding: 0 20px;
-    margin-bottom: -20px;
+    margin-bottom: -30px;
 }
 
 .footer-cta {
@@ -839,12 +838,12 @@ textarea:focus {
 
     /* Footer Mobile */
     .main-footer {
-        margin-top: 0;
+        padding-top: 0;
     }
 
     .footer-cta-wrapper {
-        transform: none;
-        margin-bottom: 0;
+        transform: none !important;
+        margin-bottom: 0 !important;
         padding: 0;
         background: var(--primary-color);
     }
