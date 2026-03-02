@@ -241,11 +241,11 @@
                 </div>
 
                 <div class="workflow-graphic" data-aos="fade-left" data-aos-delay="200">
-                    <!-- Workflow Graphic stays same but maybe update some inner labels if needed -->
                     <div class="workflow-illustration">
                         <div
                             style="width: 280px; height: 280px; background: #fbfaff; border-radius: 50%; display: flex; align-items: center; justify-content: center; position: relative; box-shadow: 0 10px 40px rgba(139, 113, 214, 0.1);">
-                            <span style="font-size: 5rem;">🎙️</span>
+                            <img src="/images/vintage-mic.png" alt="Vintage Microphone"
+                                style="width: 140px; height: auto; z-index: 2; filter: drop-shadow(0 15px 25px rgba(0,0,0,0.15));">
                         </div>
                     </div>
 
@@ -266,6 +266,177 @@
         </div>
     </section>
 
+    <style>
+        .workflow-container {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 80px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .workflow-text {
+            flex: 1;
+            min-width: 320px;
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        .workflow-graphic {
+            flex: 1.2;
+            min-width: 380px;
+            position: relative;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .workflow-illustration {
+            position: relative;
+            z-index: 2;
+        }
+
+        .workflow-circle {
+            position: absolute;
+            width: 350px;
+            height: 350px;
+            right: 0px;
+            top: 50%;
+            margin-top: -175px;
+            z-index: 1;
+        }
+
+        .workflow-curve-half {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            border: 3px dotted #b8a6e8;
+            border-radius: 50%;
+            clip-path: polygon(50% -10%, 110% -10%, 110% 110%, 50% 110%);
+        }
+
+        .workflow-node {
+            position: absolute;
+            width: 70px;
+            height: 70px;
+            background: #ffffff;
+            border-radius: 50%;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 3;
+            animation: floatNode 3s ease-in-out infinite alternate;
+        }
+
+        .workflow-node .node-inner {
+            width: 56px;
+            height: 56px;
+            background: #8b71d6;
+            border-radius: 50%;
+            color: white;
+            font-size: 0.8rem;
+            font-weight: 800;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            line-height: 1.1;
+            letter-spacing: 0.5px;
+            box-shadow: inset 0 -3px 0 rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s;
+        }
+
+        .workflow-node:hover .node-inner {
+            transform: scale(1.1);
+            background: #7359c1;
+        }
+
+        .workflow-node.node-1 {
+            left: 227.5px;
+            top: -11.55px;
+            animation-delay: 0s;
+        }
+
+        .workflow-node.node-2 {
+            left: 315px;
+            top: 140px;
+            animation-delay: 1s;
+        }
+
+        .workflow-node.node-3 {
+            left: 227.5px;
+            top: 291.55px;
+            animation-delay: 2s;
+        }
+
+        @keyframes floatNode {
+            0% {
+                transform: translateY(-6px);
+            }
+
+            100% {
+                transform: translateY(6px);
+            }
+        }
+
+        .workflow-step-text {
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .step-line-indicator {
+            position: absolute;
+            left: 0;
+            top: 5px;
+            bottom: -5px;
+            width: 3px;
+            background: #f4f2fb;
+            border-radius: 3px;
+            transition: background 0.3s;
+        }
+
+        .workflow-step-text:hover .step-line-indicator {
+            background: #8b71d6;
+        }
+
+        @media (max-width: 900px) {
+            .workflow-graphic {
+                min-width: 100%;
+                height: 380px;
+                margin-bottom: 40px;
+            }
+
+            .workflow-container {
+                flex-direction: column-reverse;
+                gap: 20px;
+            }
+
+            .workflow-circle {
+                left: 50%;
+                transform: translateX(-50%);
+                right: auto;
+                margin-left: 20px;
+            }
+        }
+
+        @media (max-width: 500px) {
+            .workflow-graphic {
+                height: 320px;
+            }
+
+            .workflow-circle {
+                transform: translateX(-50%) scale(0.85);
+                margin-left: 10px;
+            }
+        }
+    </style>
+
     <!-- Final CTA -->
     <section style="background: var(--primary-color); color: white; text-align: center; padding: 80px 0;">
         <div class="container" data-aos="zoom-in">
@@ -274,5 +445,21 @@
             <a href="/pricing" class="btn btn-secondary">View Pricing</a>
         </div>
     </section>
+
+    <style>
+        .responsive-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        @media (max-width: 768px) {
+            .responsive-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+    </style>
 
     <%- include('partials/footer') %>
