@@ -1,0 +1,279 @@
+<%- include('partials/header') %>
+
+    <!-- Page Title -->
+    <section style="background: var(--primary-color); color: white; padding: 60px 0; text-align: center;">
+        <div class="container" data-aos="fade-down">
+            <h1>Premium Audio Book Services</h1>
+            <p style="opacity: 0.8; margin-top: 10px;">Bring your story to life with professional narration and global
+                audio distribution.</p>
+        </div>
+    </section>
+
+    <!-- Audio Intro -->
+    <section>
+        <div class="container">
+            <div class="responsive-grid">
+                <div data-aos="fade-right">
+                    <h2>The Audio Revolution of Reading</h2>
+                    <p style="margin: 20px 0;">Audiobooks are the fastest-growing segment in publishing. We help you tap
+                        into this massive market by providing professional narration and high-fidelity production that
+                        captivates listeners everywhere.</p>
+                    <div style="background: var(--secondary-color); height: 5px; width: 60px; margin-bottom: 25px;">
+                    </div>
+                    <ul style="list-style: none;">
+                        <li style="margin-bottom: 12px;">✅ <strong>Professional Narration:</strong> Hand-picked voice
+                            talent to match your book's tone.</li>
+                        <li style="margin-bottom: 12px;">✅ <strong>Market Expansion:</strong> Reach readers who prefer
+                            listening on the go.</li>
+                        <li style="margin-bottom: 12px;">✅ <strong>High-Quality Production:</strong> Crystal-clear audio
+                            mastered to industry standards.</li>
+                    </ul>
+                </div>
+                <div data-aos="fade-left">
+                    <img src="https://images.unsplash.com/photo-1478737270239-2fccd2c7ffec?auto=format&fit=crop&q=80&w=800"
+                        alt="Audio Recording Equipment"
+                        style="width: 100%; height: 400px; object-fit: cover; border-radius: 20px; box-shadow: var(--shadow);">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Supported Platforms -->
+    <style>
+        .format-card {
+            background: #FFFFFF;
+            padding: 50px 30px;
+            text-align: center;
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.03);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            animation: cardBreathing 4s ease-in-out infinite alternate;
+            border: 1px solid transparent;
+        }
+
+        .format-card:nth-child(2) {
+            animation-delay: 1.2s;
+        }
+
+        .format-card:nth-child(3) {
+            animation-delay: 2.4s;
+        }
+
+        @keyframes cardBreathing {
+            0% {
+                transform: translateY(0);
+                box-shadow: 0 10px 40px rgba(0, 0, 0, 0.03);
+            }
+
+            100% {
+                transform: translateY(-8px);
+                box-shadow: 0 20px 45px rgba(139, 113, 214, 0.08);
+            }
+        }
+
+        .format-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -150%;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.8) 50%, rgba(255, 255, 255, 0) 100%);
+            transform: skewX(-25deg);
+            z-index: 10;
+        }
+
+        .format-card:hover::after {
+            animation: shine 0.8s ease-out forwards;
+        }
+
+        @keyframes shine {
+            0% {
+                left: -150%;
+            }
+
+            100% {
+                left: 200%;
+            }
+        }
+
+        .format-card:hover {
+            transform: translateY(-20px) scale(1.03) !important;
+            box-shadow: 0 25px 60px rgba(139, 113, 214, 0.25) !important;
+            border: 1px solid rgba(139, 113, 214, 0.3);
+            animation-play-state: paused;
+        }
+
+        .format-icon-container {
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 25px;
+            filter: drop-shadow(0 5px 5px rgba(0, 0, 0, 0.05));
+            transition: filter 0.4s ease;
+        }
+
+        .format-card:hover .format-icon-container {
+            filter: drop-shadow(0 15px 15px rgba(139, 113, 214, 0.4));
+        }
+
+        .format-icon {
+            font-size: 3rem;
+            transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .format-card:hover .format-icon {
+            transform: scale(1.25) rotate(8deg);
+        }
+
+        .floating-icon {
+            animation: floatIcon 3s ease-in-out infinite alternate;
+        }
+
+        @keyframes floatIcon {
+            0% {
+                transform: translateY(-4px);
+            }
+
+            100% {
+                transform: translateY(6px);
+            }
+        }
+    </style>
+
+    <section style="background: #fdfcf0; padding: 100px 0;">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 55px;">
+                <h2 data-aos="fade-up"
+                    style="font-family: 'Playfair Display', serif; font-size: 2.2rem; color: #333; margin-bottom: 12px; font-weight: 700;">
+                    Global Distribution</h2>
+                <p data-aos="fade-up" data-aos-delay="100" style="color: #666; font-size: 1rem; font-weight: 500;">Your
+                    book on every major audio platform.</p>
+            </div>
+            <div
+                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 35px; max-width: 1050px; margin: 0 auto;">
+
+                <!-- Audible -->
+                <div class="format-card" data-aos="zoom-up" data-aos-delay="100">
+                    <div class="format-icon-container floating-icon" style="animation-delay: 0s;">
+                        <span class="format-icon">🎧</span>
+                    </div>
+                    <h4
+                        style="font-family: 'Playfair Display', serif; font-size: 1.1rem; color: #2D2D2D; margin-bottom: 12px; font-weight: 800;">
+                        Audible (ACX)</h4>
+                    <p style="color: #666; font-size: 0.95rem; line-height: 1.6; margin: 0;">Full integration with
+                        Amazon's Audible, the world's leading audio service.</p>
+                </div>
+
+                <!-- Spotify -->
+                <div class="format-card" data-aos="zoom-up" data-aos-delay="200">
+                    <div class="format-icon-container floating-icon" style="animation-delay: 0.3s;">
+                        <span class="format-icon">🎙️</span>
+                    </div>
+                    <h4
+                        style="font-family: 'Playfair Display', serif; font-size: 1.1rem; color: #2D2D2D; margin-bottom: 12px; font-weight: 800;">
+                        Spotify & Apple</h4>
+                    <p style="color: #666; font-size: 0.95rem; line-height: 1.6; margin: 0;">Distribution to Spotify
+                        Audio and Apple Books for maximum listener reach.</p>
+                </div>
+
+                <!-- Libraries -->
+                <div class="format-card" data-aos="zoom-up" data-aos-delay="300">
+                    <div class="format-icon-container floating-icon" style="animation-delay: 0.6s;">
+                        <span class="format-icon">📀</span>
+                    </div>
+                    <h4
+                        style="font-family: 'Playfair Display', serif; font-size: 1.1rem; color: #2D2D2D; margin-bottom: 12px; font-weight: 800;">
+                        Library Networks</h4>
+                    <p style="color: #666; font-size: 0.95rem; line-height: 1.6; margin: 0;">Presence in OverDrive and
+                        Libby library networks globally.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Audio Process -->
+    <section style="padding: 100px 0; background: #ffffff; overflow: hidden;">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 80px;">
+                <h2 data-aos="fade-up"
+                    style="font-family: 'Playfair Display', serif; font-size: 2.2rem; color: #2D2D2D; margin-bottom: 15px; font-weight: 700;">
+                    Our Audio Workflow</h2>
+                <p data-aos="fade-up" data-aos-delay="100"
+                    style="color: #666; font-size: 1rem; max-width: 600px; margin: 0 auto;">A premium production cycle
+                    ensuring your book sounds as good as it reads.</p>
+            </div>
+
+            <div class="workflow-container">
+                <div class="workflow-text" data-aos="fade-right">
+                    <div class="workflow-step-text">
+                        <div class="step-line-indicator"></div>
+                        <h4
+                            style="color: #2D2D2D; font-family: 'Playfair Display', serif; font-size: 1.4rem; margin-bottom: 8px; font-weight: 700;">
+                            Narrator Selection</h4>
+                        <p style="color: #666; font-size: 0.95rem; line-height: 1.7; margin: 0;">We provide a curated
+                            list of professional narrators whose voices perfectly complement your book's genre and
+                            characters.</p>
+                    </div>
+
+                    <div class="workflow-step-text">
+                        <div class="step-line-indicator"></div>
+                        <h4
+                            style="color: #2D2D2D; font-family: 'Playfair Display', serif; font-size: 1.4rem; margin-bottom: 8px; font-weight: 700;">
+                            Studio Recording</h4>
+                        <p style="color: #666; font-size: 0.95rem; line-height: 1.7; margin: 0;">High-fidelity recording
+                            in acoustically treated studios, ensuring zero background noise and perfect clarity.</p>
+                    </div>
+
+                    <div class="workflow-step-text">
+                        <div class="step-line-indicator"></div>
+                        <h4
+                            style="color: #2D2D2D; font-family: 'Playfair Display', serif; font-size: 1.4rem; margin-bottom: 8px; font-weight: 700;">
+                            Mastering & QA</h4>
+                        <p style="color: #666; font-size: 0.95rem; line-height: 1.7; margin: 0;">Rigorous
+                            post-production, multi-point quality checks, and mastering to meet strict ACX and industry
+                            standards.</p>
+                    </div>
+                </div>
+
+                <div class="workflow-graphic" data-aos="fade-left" data-aos-delay="200">
+                    <!-- Workflow Graphic stays same but maybe update some inner labels if needed -->
+                    <div class="workflow-illustration">
+                        <div
+                            style="width: 280px; height: 280px; background: #fbfaff; border-radius: 50%; display: flex; align-items: center; justify-content: center; position: relative; box-shadow: 0 10px 40px rgba(139, 113, 214, 0.1);">
+                            <span style="font-size: 5rem;">🎙️</span>
+                        </div>
+                    </div>
+
+                    <div class="workflow-circle">
+                        <div class="workflow-curve-half"></div>
+                        <div class="workflow-node node-1">
+                            <div class="node-inner">STEP<br>01</div>
+                        </div>
+                        <div class="workflow-node node-2">
+                            <div class="node-inner">STEP<br>02</div>
+                        </div>
+                        <div class="workflow-node node-3">
+                            <div class="node-inner">STEP<br>03</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section style="background: var(--primary-color); color: white; text-align: center; padding: 80px 0;">
+        <div class="container" data-aos="zoom-in">
+            <h2>Ready to Record?</h2>
+            <p style="margin: 20px 0 30px; opacity: 0.9;">Professional audio production starts here.</p>
+            <a href="/pricing" class="btn btn-secondary">View Pricing</a>
+        </div>
+    </section>
+
+    <%- include('partials/footer') %>
