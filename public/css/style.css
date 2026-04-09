@@ -200,12 +200,12 @@ header.scrolled {
 
 .nav-links a {
     font-weight: 700;
-    font-size: 0.72rem;
-    letter-spacing: 1px;
+    font-size: 0.82rem;
+    letter-spacing: 0.8px;
     text-transform: uppercase;
     position: relative;
     color: var(--primary-color);
-    padding: 10px 5px;
+    padding: 10px 8px;
     transition: var(--transition);
     white-space: nowrap;
 }
