@@ -1,0 +1,70 @@
+<%- include('partials/header') %>
+
+    <section class="page-header" style="background: var(--primary-color); color: white; padding: 80px 0; text-align: center;">
+        <div class="container" data-aos="fade-down">
+            <h1>Expert Publishing Articles</h1>
+            <p style="opacity: 0.8; margin-top: 10px;">Master the art of writing, publishing, and global distribution.</p>
+        </div>
+    </section>
+
+    <section class="blog-section" style="padding: 80px 0;">
+        <div class="container">
+            <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 35px;">
+                
+                <% articles.forEach((article, index) => { %>
+                <article class="blog-card" style="background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: all 0.3s ease;" data-aos="fade-up" data-aos-delay="<%= (index % 3) * 100 %>">
+                    <div style="position: relative;">
+                        <!-- Using different unsplash images based on category or index for variety -->
+                        <img src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=format&fit=crop&q=80&w=800&sig=<%= index %>" alt="<%= article.title %>" style="width: 100%; height: 230px; object-fit: cover;">
+                        <span style="position: absolute; top: 15px; left: 15px; background: var(--secondary-color); color: white; padding: 5px 12px; border-radius: 5px; font-size: 0.75rem; font-weight: 700; text-transform: uppercase;"><%= article.category %></span>
+                    </div>
+                    <div style="padding: 25px;">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; font-size: 0.85rem; color: #888;">
+                            <span><i class="far fa-calendar-alt"></i> <%= article.date %></span>
+                            <span><i class="far fa-clock"></i> <%= article.readTime %></span>
+                        </div>
+                        <h3 style="margin: 0 0 15px; font-family: 'Playfair Display', serif; font-size: 1.4rem; line-height: 1.4;">
+                            <a href="/articles/<%= article.slug %>" style="color: var(--primary-color); text-decoration: none; transition: color 0.3s;"><%= article.title %></a>
+                        </h3>
+                        <p style="color: #666; font-size: 0.95rem; line-height: 1.6; margin-bottom: 20px;"><%= article.excerpt %></p>
+                        <a href="/articles/<%= article.slug %>" class="read-more-btn" style="color: var(--secondary-color); font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 8px;">
+                            Read Full Article <i class="fas fa-arrow-right" style="font-size: 0.8rem;"></i>
+                        </a>
+                    </div>
+                </article>
+                <% }) %>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- AdSense Optimization: Extra Content Block -->
+    <section style="background: #fdfaf4; padding: 80px 0; border-top: 1px solid #eee;">
+        <div class="container" style="max-width: 900px; text-align: center;">
+            <h2 style="font-family: 'Playfair Display', serif; font-size: 2.2rem; color: var(--primary-color); margin-bottom: 25px;">Empowering Authors Worldwide</h2>
+            <div style="line-height: 1.8; color: #555; font-size: 1.1rem;">
+                <p>Our commitment to editorial excellence goes beyond book production. We strive to create a comprehensive knowledge base for independent authors and seasoned writers alike. Whether you are navigating the complexities of international copyright or seeking the perfect voice for your audiobook, our research-backed articles are designed to guide you through every stage of the publishing journey.</p>
+                <p style="margin-top: 20px;">Stay tuned for weekly updates on industry trends, marketing secrets, and technical guides that turn literary visions into global legacies.</p>
+            </div>
+        </div>
+    </section>
+
+    <style>
+        .blog-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1) !important;
+        }
+        .blog-card:hover h3 a {
+            color: var(--secondary-color) !important;
+        }
+        .read-more-btn:hover i {
+            transform: translateX(5px);
+            transition: transform 0.3s;
+        }
+        @media (max-width: 768px) {
+            .blog-section { padding: 40px 0; }
+            .page-header { padding: 40px 0; }
+        }
+    </style>
+
+<%- include('partials/footer') %>

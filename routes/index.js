@@ -11,6 +11,61 @@ router.get('/pricing', (req, res) => res.render('pricing', { title: 'Pricing & P
 router.get('/testimonials', (req, res) => res.render('testimonials', { title: 'Testimonials & Portfolio | Infranex Publishers' }));
 router.get('/contact', (req, res) => res.render('contact', { title: 'Contact Us | Infranex Publishers', query: req.query }));
 
+// ── AdSense & Content Routes ───────────────────────────
+router.get('/privacy-policy', (req, res) => res.render('privacy-policy', { title: 'Privacy Policy | Infranex Publishers' }));
+router.get('/terms-of-service', (req, res) => res.render('terms-of-service', { title: 'Terms of Service | Infranex Publishers' }));
+router.get('/disclaimer', (req, res) => res.render('disclaimer', { title: 'Disclaimer | Infranex Publishers' }));
+const fs = require('fs');
+const path = require('path');
+
+// Helper to get articles
+const getArticles = () => {
+    try {
+        const data = fs.readFileSync(path.join(__dirname, '../data/articles.json'), 'utf8');
+        return JSON.parse(data);
+    } catch (err) {
+        console.error('Error reading articles:', err);
+        return [];
+    }
+};
+
+router.get('/articles', (req, res) => {
+    const articles = getArticles();
+    res.render('articles', { title: 'Our Articles | Publishing Insights', articles });
+});
+
+router.get('/articles/:slug', (req, res) => {
+    const articles = getArticles();
+    const { slug } = req.params;
+    const article = articles.find(a => a.slug === slug);
+    
+    if (!article) {
+        return res.redirect('/articles');
+    }
+    
+    res.render('article-post', { title: `${article.title} | Infranex Publishers`, article });
+});
+
+router.get('/sitemap.xml', (req, res) => {
+    const articles = getArticles();
+    const baseUrl = 'https://infranexpublishers.com';
+    let sitemap = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n';
+    
+    // Core pages
+    ['', '/about', '/services', '/audiobook-services', '/pricing', '/testimonials', '/contact', '/articles', '/privacy-policy', '/terms-of-service', '/disclaimer'].forEach(url => {
+        sitemap += `  <url><loc>${baseUrl}${url}</loc><changefreq>weekly</changefreq></url>\n`;
+    });
+    
+    // Article pages
+    articles.forEach(article => {
+        sitemap += `  <url><loc>${baseUrl}/articles/${article.slug}</loc><changefreq>monthly</changefreq></url>\n`;
+    });
+    
+    sitemap += '</urlset>';
+    res.header('Content-Type', 'application/xml');
+    res.send(sitemap);
+});
+
 // ── Unified Lead POST ─────────────────────────────────────────
 // Both the contact form and the pricing modal POST here.
 // `source` hidden field tells us where the lead came from.
