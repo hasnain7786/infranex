@@ -179,28 +179,35 @@
                 
                 if (now < cooldownEnd) {
                     // We are in the 2-day cooldown period. Show "Offer Expired".
-                    distance = 0;
                     
+                    // Update Hero Timer UI
                     let heroCountdown = document.getElementById("hero-countdown");
                     if (heroCountdown) {
                         heroCountdown.innerHTML = "<h3 style='color:var(--secondary-color); font-weight:800; font-size:2.5rem; margin:0; text-transform:uppercase; letter-spacing: 2px; text-shadow: 0 5px 15px rgba(0,0,0,0.5);'>Offer Expired</h3>";
                     }
                     
-                    let modalTimerBox = document.querySelector("#discountModal > div > div:nth-child(3)");
-                    if (modalTimerBox && modalTimerBox.innerHTML.includes("Offer Expires In")) {
+                    // Update Modal Timer UI
+                    let modalTimerBox = document.querySelector("#discountModal .modal-content div[style*='background: #f8f9fa']");
+                    if (modalTimerBox) {
                          modalTimerBox.innerHTML = "<h3 style='color:var(--primary-color); font-weight:800; margin: 10px 0;'>OFFER EXPIRED</h3><p style='font-size:0.85rem; color:#555;'>Check back later for new promotions.</p>";
                     }
                     
-                    // Hide the claim buttons to enforce it's genuinely expired
+                    // Style the button as Expired instead of hiding it
                     let heroBtn = document.querySelector(".hero-btns a.btn[onclick='openDiscountModal()']");
-                    if (heroBtn) heroBtn.style.display = 'none';
+                    if (heroBtn) {
+                        heroBtn.innerHTML = "Offer Expired";
+                        heroBtn.style.background = "linear-gradient(to right, #ccc, #999)";
+                        heroBtn.style.opacity = "0.6";
+                        heroBtn.style.pointerEvents = "none";
+                        heroBtn.style.boxShadow = "none";
+                    }
                     
                     return; // Stop processing further for this tick
                 } else {
                     // Cooldown has completely passed! Back on public demand, restart for 23 days!
                     end = new Date().getTime() + twentyThreeDaysMs;
                     localStorage.setItem('infranexPromoEnd', end.toString());
-                    location.reload(); // Reload to restore UI elements and restart timer cleanly
+                    location.reload(); 
                     return;
                 }
             }
