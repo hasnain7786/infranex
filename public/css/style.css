@@ -737,8 +737,11 @@ textarea:focus {
     /* Mobile Phone Badge Adjustment */
     .nav-actions-item {
         flex-direction: column;
-        gap: 15px;
-        margin-top: 5px;
+        gap: 12px;
+        margin-top: 10px;
+        align-items: center;
+        width: 100%;
+        display: flex !important;
     }
 
     .header-phone-badge {
@@ -748,10 +751,15 @@ textarea:focus {
         transform: none !important;
         margin-left: 0 !important;
         width: fit-content;
+        background: transparent !important;
+        border: none !important;
+        box-shadow: none !important;
+        font-size: 1.1rem !important;
+        padding: 5px 0 !important;
     }
 
-    .header-phone-badge:hover {
-        transform: scale(1.02) !important;
+    .header-phone-badge i {
+        margin-right: 10px;
     }
 
     /* Logo smaller on tablet */
