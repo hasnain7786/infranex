@@ -151,13 +151,36 @@
 
     // Countdown Timer Logic
     function startCountdown() {
-        // Set fixed end time to 23:59:59 from now
-        let end = new Date().getTime() + (23 * 60 * 60 * 1000) + (59 * 60 * 1000) + (59 * 1000);
+        // Use localStorage to make the timer realistic and persistent across reloads
+        let endObj = localStorage.getItem('infranexPromoEnd');
+        let end;
+        
+        if (endObj) {
+            end = parseInt(endObj);
+            // If somehow the time has passed, reset it
+            if (end < new Date().getTime()) {
+                end = new Date().getTime() + (23 * 60 * 60 * 1000) + (59 * 60 * 1000) + (59 * 1000);
+                localStorage.setItem('infranexPromoEnd', end.toString());
+            }
+        } else {
+            // First time visiting, set timer to end in 23h 59m 59s
+            end = new Date().getTime() + (23 * 60 * 60 * 1000) + (59 * 60 * 1000) + (59 * 1000);
+            localStorage.setItem('infranexPromoEnd', end.toString());
+        }
         
         setInterval(function() {
             let now = new Date().getTime();
             let distance = end - now;
             
+            // If timer runs out, keep it at 0 to induce extreme urgency or reset it
+            if (distance < 0) {
+                distance = 0; 
+                // Optional: To loop the evergreen timer automatically when it fully expires:
+                end = new Date().getTime() + (23 * 60 * 60 * 1000) + (59 * 60 * 1000) + (59 * 1000);
+                localStorage.setItem('infranexPromoEnd', end.toString());
+                distance = end - now;
+            }
+
             // Time calculations for days, hours, minutes and seconds
             let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
             let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
@@ -179,13 +202,10 @@
             // Update Hero Timer (if exists)
             let hH = document.getElementById("hero-hours");
             if(hH) {
+                // Adjust for hero if you want standard display, else copy directly
                 hH.innerHTML = parseInt(hours) > 12 ? (parseInt(hours) - 12) : hours;
                 document.getElementById("hero-minutes").innerHTML = minutes;
                 document.getElementById("hero-seconds").innerHTML = seconds;
-            }
-            
-            if (distance < 0) {
-                end = new Date().getTime() + (23 * 60 * 60 * 1000); // Reset
             }
         }, 1000);
     }
