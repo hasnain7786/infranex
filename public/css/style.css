@@ -165,7 +165,6 @@ header.scrolled {
     font-size: 1.8rem;
     font-weight: 800;
     color: var(--primary-color);
-    margin-right: auto;
 }
 
 .logo-image {
