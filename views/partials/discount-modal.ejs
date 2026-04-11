@@ -156,7 +156,9 @@
 
     // Countdown Timer Logic
     function startCountdown() {
-        let endObj = localStorage.getItem('infranexPromoEnd');
+        // Updated key to force refresh for everyone to 23 Days
+        let endKey = 'infranexPromoEnd_v3';
+        let endObj = localStorage.getItem(endKey);
         let twentyThreeDaysMs = 23 * 24 * 60 * 60 * 1000;
         let twoDaysMs = 2 * 24 * 60 * 60 * 1000;
         let end;
@@ -164,9 +166,9 @@
         if (endObj) {
             end = parseInt(endObj);
         } else {
-            // First time visiting, set timer to end in 23 days
+            // Force start at 23 days for new/reset users
             end = new Date().getTime() + twentyThreeDaysMs;
-            localStorage.setItem('infranexPromoEnd', end.toString());
+            localStorage.setItem(endKey, end.toString());
         }
         
         let interval = setInterval(function() {
@@ -192,7 +194,7 @@
                          modalTimerBox.innerHTML = "<h3 style='color:var(--primary-color); font-weight:800; margin: 10px 0;'>OFFER EXPIRED</h3><p style='font-size:0.85rem; color:#555;'>Check back later for new promotions.</p>";
                     }
                     
-                    // Style the button as Expired instead of hiding it
+                    // Style the button as Expired
                     let heroBtn = document.querySelector(".hero-btns a.btn[onclick='openDiscountModal()']");
                     if (heroBtn) {
                         heroBtn.innerHTML = "Offer Expired";
@@ -202,11 +204,11 @@
                         heroBtn.style.boxShadow = "none";
                     }
                     
-                    return; // Stop processing further for this tick
+                    return; 
                 } else {
-                    // Cooldown has completely passed! Back on public demand, restart for 23 days!
+                    // Cooldown has completely passed! Restart for 23 days!
                     end = new Date().getTime() + twentyThreeDaysMs;
-                    localStorage.setItem('infranexPromoEnd', end.toString());
+                    localStorage.setItem(endKey, end.toString());
                     location.reload(); 
                     return;
                 }
