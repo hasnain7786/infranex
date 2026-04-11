@@ -250,7 +250,8 @@ header.scrolled {
 /* ── Header Phone Badge ── */
 .nav-actions-item {
     position: relative;
-    display: flex;
+    display: flex !important;
+    flex-direction: row !important;
     align-items: center;
 }
 
@@ -678,9 +679,9 @@ textarea:focus {
 }
 
 /* ═════
-   RESPONSIVE BREAKPOINTS — TABLET (≤992px)
+   RESPONSIVE BREAKPOINTS — TABLET (≤991px)
 ═══════════════════════════════════════════ */
-@media (max-width: 1120px) {
+@media (max-width: 991px) {
 
     /* Slide-in mobile nav */
     .nav-links {
