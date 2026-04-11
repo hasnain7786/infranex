@@ -190,7 +190,7 @@ header.scrolled {
 /* ── Nav Links ── */
 .nav-links {
     display: flex;
-    gap: 15px;
+    gap: 10px;
     align-items: center;
     list-style: none;
     margin: 0;
@@ -199,12 +199,12 @@ header.scrolled {
 
 .nav-links a {
     font-weight: 700;
-    font-size: 0.82rem;
-    letter-spacing: 0.8px;
+    font-size: 0.80rem;
+    letter-spacing: 0.5px;
     text-transform: uppercase;
     position: relative;
     color: var(--primary-color);
-    padding: 10px 8px;
+    padding: 8px 6px;
     transition: var(--transition);
     white-space: nowrap;
 }
