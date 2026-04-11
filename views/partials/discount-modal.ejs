@@ -19,6 +19,11 @@
             <p style="font-size: 0.8rem; font-weight: 700; color: #555; text-transform: uppercase; margin-bottom: 8px;">Offer Expires In:</p>
             <div style="display: flex; justify-content: center; gap: 15px; color: var(--primary-color);">
                 <div style="text-align: center;">
+                    <span id="modal-days" style="font-size: 1.5rem; font-weight: 800; display: block; line-height: 1;">23</span>
+                    <span style="font-size: 0.65rem; font-weight: 600;">DAYS</span>
+                </div>
+                <span style="font-size: 1.5rem; font-weight: 800;">:</span>
+                <div style="text-align: center;">
                     <span id="modal-hours" style="font-size: 1.5rem; font-weight: 800; display: block; line-height: 1;">23</span>
                     <span style="font-size: 0.65rem; font-weight: 600;">HOURS</span>
                 </div>
@@ -151,59 +156,81 @@
 
     // Countdown Timer Logic
     function startCountdown() {
-        // Use localStorage to make the timer realistic and persistent across reloads
         let endObj = localStorage.getItem('infranexPromoEnd');
+        let twentyThreeDaysMs = 23 * 24 * 60 * 60 * 1000;
+        let twoDaysMs = 2 * 24 * 60 * 60 * 1000;
         let end;
         
         if (endObj) {
             end = parseInt(endObj);
-            // If somehow the time has passed, reset it
-            if (end < new Date().getTime()) {
-                end = new Date().getTime() + (23 * 60 * 60 * 1000) + (59 * 60 * 1000) + (59 * 1000);
-                localStorage.setItem('infranexPromoEnd', end.toString());
-            }
         } else {
-            // First time visiting, set timer to end in 23h 59m 59s
-            end = new Date().getTime() + (23 * 60 * 60 * 1000) + (59 * 60 * 1000) + (59 * 1000);
+            // First time visiting, set timer to end in 23 days
+            end = new Date().getTime() + twentyThreeDaysMs;
             localStorage.setItem('infranexPromoEnd', end.toString());
         }
         
-        setInterval(function() {
+        let interval = setInterval(function() {
             let now = new Date().getTime();
             let distance = end - now;
             
-            // If timer runs out, keep it at 0 to induce extreme urgency or reset it
+            // If timer runs out, trigger the 2-day cooldown period
             if (distance < 0) {
-                distance = 0; 
-                // Optional: To loop the evergreen timer automatically when it fully expires:
-                end = new Date().getTime() + (23 * 60 * 60 * 1000) + (59 * 60 * 1000) + (59 * 1000);
-                localStorage.setItem('infranexPromoEnd', end.toString());
-                distance = end - now;
+                let cooldownEnd = end + twoDaysMs;
+                
+                if (now < cooldownEnd) {
+                    // We are in the 2-day cooldown period. Show "Offer Expired".
+                    distance = 0;
+                    
+                    let heroCountdown = document.getElementById("hero-countdown");
+                    if (heroCountdown) {
+                        heroCountdown.innerHTML = "<h3 style='color:var(--secondary-color); font-weight:800; font-size:2.5rem; margin:0; text-transform:uppercase; letter-spacing: 2px; text-shadow: 0 5px 15px rgba(0,0,0,0.5);'>Offer Expired</h3>";
+                    }
+                    
+                    let modalTimerBox = document.querySelector("#discountModal > div > div:nth-child(3)");
+                    if (modalTimerBox && modalTimerBox.innerHTML.includes("Offer Expires In")) {
+                         modalTimerBox.innerHTML = "<h3 style='color:var(--primary-color); font-weight:800; margin: 10px 0;'>OFFER EXPIRED</h3><p style='font-size:0.85rem; color:#555;'>Check back later for new promotions.</p>";
+                    }
+                    
+                    // Hide the claim buttons to enforce it's genuinely expired
+                    let heroBtn = document.querySelector(".hero-btns a.btn[onclick='openDiscountModal()']");
+                    if (heroBtn) heroBtn.style.display = 'none';
+                    
+                    return; // Stop processing further for this tick
+                } else {
+                    // Cooldown has completely passed! Back on public demand, restart for 23 days!
+                    end = new Date().getTime() + twentyThreeDaysMs;
+                    localStorage.setItem('infranexPromoEnd', end.toString());
+                    location.reload(); // Reload to restore UI elements and restart timer cleanly
+                    return;
+                }
             }
 
             // Time calculations for days, hours, minutes and seconds
+            let days = Math.floor(distance / (1000 * 60 * 60 * 24));
             let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
             let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
             let seconds = Math.floor((distance % (1000 * 60)) / 1000);
             
             // Format numbers
+            days = days < 10 ? "0" + days : days;
             hours = hours < 10 ? "0" + hours : hours;
             minutes = minutes < 10 ? "0" + minutes : minutes;
             seconds = seconds < 10 ? "0" + seconds : seconds;
             
             // Update Modal Timer
-            let mH = document.getElementById("modal-hours");
-            if(mH) {
-                mH.innerHTML = hours;
+            let mD = document.getElementById("modal-days");
+            if(mD) {
+                mD.innerHTML = days;
+                document.getElementById("modal-hours").innerHTML = hours;
                 document.getElementById("modal-minutes").innerHTML = minutes;
                 document.getElementById("modal-seconds").innerHTML = seconds;
             }
 
             // Update Hero Timer (if exists)
-            let hH = document.getElementById("hero-hours");
-            if(hH) {
-                // Adjust for hero if you want standard display, else copy directly
-                hH.innerHTML = parseInt(hours) > 12 ? (parseInt(hours) - 12) : hours;
+            let hD = document.getElementById("hero-days");
+            if(hD) {
+                hD.innerHTML = days;
+                document.getElementById("hero-hours").innerHTML = hours;
                 document.getElementById("hero-minutes").innerHTML = minutes;
                 document.getElementById("hero-seconds").innerHTML = seconds;
             }
