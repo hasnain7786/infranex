@@ -148,5 +148,105 @@
     "excerpt": "Single-format releases are a thing of the past. Discover why releasing in Hardcopy, PDF, and Audio is the way to go.",
     "content": "In today’s fragmented media landscape, every reader has a preference. Some love the smell of paper, some love the convenience of an e-reader, and others prefer to listen.",
     "imageUrl": "/images/articles/multi-format-reach.jpg"
+  },
+  {
+    "slug": "ai-creative-writing-partnership",
+    "title": "AI in Creative Writing: Partner or Competitor?",
+    "category": "Industry Trends",
+    "date": "Apr 12, 2026",
+    "readTime": "6 min",
+    "excerpt": "As AI tools evolve, authors are finding new ways to integrate technology while keeping the human soul in storytelling.",
+    "content": "Artificial Intelligence is no longer a futuristic concept. In 2026, it has become a collaborative partner for many successful authors. The key is in use—using AI for structural outlines and character archetypes, while ensuring the emotional depth remains purely human. Authors who adapt to these tools are finding more time to focus on complex narrative arcs.",
+    "imageUrl": "/images/articles/ai-creative-writing.jpg"
+  },
+  {
+    "slug": "rise-of-booktok-marketing-gen-z",
+    "title": "The Rise of BookTok: Marketing to Gen Z Readers",
+    "category": "Marketing",
+    "date": "Apr 13, 2026",
+    "readTime": "5 min",
+    "excerpt": "TikTok has transformed book marketing. Learn how short-form video can propel your book into the limelight.",
+    "content": "BookTok has changed the dynamics of the publishing industry. A single 15-second viral video can now trigger more sales than a front-page review in a legacy newspaper. For authors, mastering the subtle art of the 'aesthetic' video and engaging with the community is no longer optional—it is a vital component of a modern sales strategy.",
+    "imageUrl": "/images/articles/booktok-marketing.jpg"
+  },
+  {
+    "slug": "choosing-between-self-and-traditional-publishing",
+    "title": "Self vs. Traditional Publishing: The 2026 Verdict",
+    "category": "Self-Publishing",
+    "date": "Apr 14, 2026",
+    "readTime": "8 min",
+    "excerpt": "Which path is right for your legacy? We explore the royalties, control, and prestige of both publishing models.",
+    "content": "The line between self-publishing and traditional publishing continues to blur. While traditional houses offer prestige and physical distribution, self-publishing provides unparalleled control and higher royalty percentages. Success in 2026 depends on your individual goals—do you want the validation of a legacy house, or the entrepreneurial flexibility of going indie?",
+    "imageUrl": "/images/articles/self-vs-traditional.jpg"
+  },
+  {
+    "slug": "branding-your-book-series",
+    "title": "Mastering the Art of Book Series Branding",
+    "category": "Design",
+    "date": "Apr 15, 2026",
+    "readTime": "4 min",
+    "excerpt": "A series is more than just sequential stories. Learn how to create a visual identity that hooks readers for life.",
+    "content": "When a reader finishes Book One, their first instinct should be reaching for Book Two. This is achieved through cohesive series branding. From consistent typography on the spine to a shared color palette across covers, your visual identity acts as a silent contract with the reader, promising more of the story they just fell in love with.",
+    "imageUrl": "/images/articles/series-branding.jpg"
+  },
+  {
+    "slug": "crafting-authentic-character-dialogue",
+    "title": "Voices that Echo: Crafting Authentic Character Dialogue",
+    "category": "Writing Tips",
+    "date": "Apr 16, 2026",
+    "readTime": "7 min",
+    "excerpt": "Stop writing wooden dialogue. Learn the practical techniques to make your characters sound real, nuanced, and unique.",
+    "content": "Authentic dialogue is not a transcript of real life; it is an optimized version of it. It should reveal character and advance the plot simultaneously. The best dialogue uses subtext—where what is *not* said is just as important as the spoken word. Listen to how people actually speak—their pauses, their interruptions—and bring that texture to the page.",
+    "imageUrl": "/images/articles/authentic-dialog.jpg"
+  },
+  {
+    "slug": "crowdfunding-book-kickstarter-strategy",
+    "title": "Crowdfunding Success: Your Kickstarter Book Strategy",
+    "category": "Marketing",
+    "date": "Apr 17, 2026",
+    "readTime": "9 min",
+    "excerpt": "Want to bypass the financial barriers of publishing? Kickstarter offers a direct line to your future readers.",
+    "content": "Kickstarter has become a powerhouse for independent authors. It allows you to fund your printing and editorial costs upfront while building a dedicated fan base. However, a successful campaign isn't just about 'requesting money'; it's about offering value through exclusive rewards, signed copies, and early access that makes your supporters feel like part of the creative process.",
+    "imageUrl": "/images/articles/kickstarter-book.jpg"
+  },
+  {
+    "slug": "psychology-of-book-titles",
+    "title": "The Hook: The Psychology Behind 10/10 Book Titles",
+    "category": "Writing Tips",
+    "date": "Apr 18, 2026",
+    "readTime": "5 min",
+    "excerpt": "A title is your book's first handshake. Learn how to use linguistics and psychology to name your masterpiece.",
+    "content": "Your title is the most important sentence you will ever write. It needs to convey genre, promise an emotion, and be memorable—all in under five words. Psychological studies show that titles with strong imagery or a central conflict trigger curiosity in the brain's ventral striatum, compelling the reader to click 'Read More'.",
+    "imageUrl": "/images/articles/title-psychology.jpg"
+  },
+  {
+    "slug": "selling-more-books-via-podcasts",
+    "title": "Be Our Guest: Using Podcasts to Sell More Books",
+    "category": "Marketing",
+    "date": "Apr 18, 2026",
+    "readTime": "6 min",
+    "excerpt": "Podcast guesting is the new book tour. Learn how to pitch, prepare, and convert listeners into lifelong readers.",
+    "content": "The modern book tour doesn't happen in a library; it happens in a pair of headphones. Being a guest on niche podcasts allows you to speak directly to your target audience for 30 to 60 minutes. This creates a deep level of trust that a social media post never can. Focus on provides value to the host's audience first, and the book sales will follow naturally.",
+    "imageUrl": "/images/articles/podcast-marketing.jpg"
+  },
+  {
+    "slug": "print-on-demand-game-changer",
+    "title": "Print-on-Demand: The Technical Revolution for Indie Authors",
+    "category": "Technical",
+    "date": "Apr 18, 2026",
+    "readTime": "7 min",
+    "excerpt": "Say goodbye to garage-fulls of unsold books. POD allows for global distribution with zero inventory risk.",
+    "content": "Print-on-Demand (POD) technology has leveled the playing field. In 2026, an indie author's POD book is indistinguishable from a traditional house's print run. With no upfront inventory costs and distribution channels reaching every corner of the globe via Infranex, authors can now focus their capital on what matters most: editing and design.",
+    "imageUrl": "/images/articles/print-on-demand.jpg"
+  },
+  {
+    "slug": "bibliography-non-fiction-importance",
+    "title": "The Backbone of Truth: Bibliography in Non-Fiction",
+    "category": "Technical",
+    "date": "Apr 18, 2026",
+    "readTime": "5 min",
+    "excerpt": "In an era of information, citations are your currency. Learn how to build a world-class bibliography for your book.",
+    "content": "A non-fiction book is only as strong as its sources. A meticulous bibliography does more than just avoid plagiarism—it builds authority and provides a roadmap for readers who want to dive deeper. Whether using APA, MLA, or Chicago style, consistency is key to establishing yourself as a trustworthy expert in your field.",
+    "imageUrl": "/images/articles/citations-guide.jpg"
   }
 ]
