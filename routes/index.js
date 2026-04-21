@@ -3,7 +3,11 @@ const router = express.Router();
 const Lead = require('../models/Lead');
 
 // ── Page Routes ──────────────────────────────────────────────
-router.get('/', (req, res) => res.render('index', { title: 'Home | Infranex Publishers' }));
+router.get('/', (req, res) => {
+    const articles = getArticles();
+    const latestArticles = articles.reverse().slice(0, 3);
+    res.render('index', { title: 'Home | Infranex Publishers', latestArticles });
+});
 router.get('/about', (req, res) => res.render('about', { title: 'About Us | Infranex Publishers' }));
 router.get('/services', (req, res) => res.render('services', { title: 'Our Services | Infranex Publishers' }));
 router.get('/audiobook-services', (req, res) => res.render('audiobook-services', { title: 'Audio Book Services | Infranex Publishers' }));

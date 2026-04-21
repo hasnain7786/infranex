@@ -195,20 +195,82 @@
             </div>
         </div>
         
-        <style>
-            @media (max-width: 1024px) {
-                .premium-grid { grid-template-columns: 1fr !important; gap: 50px !important; }
-                .premium-visual { order: -1; max-width: 600px; margin: 0 auto; }
-            }
-            @media (max-width: 768px) {
-                .premium-publishing h2 { font-size: 2.3rem !important; }
-                .premium-publishing p { font-size: 1.05rem !important; }
-            }
-            @media (max-width: 500px) {
-                .premium-publishing .feature-list { grid-template-columns: 1fr !important; gap: 20px !important; }
-            }
-        </style>
+    <!-- Latest Blog Articles Showcase -->
+    <section class="latest-articles" style="background-color: #fdfcf0; padding: 100px 0;">
+        <div class="container">
+            <div class="section-title" style="text-align: center; margin-bottom: 60px;">
+                <h4 style="color: var(--secondary-color); font-weight: 700; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 15px;" data-aos="fade-up">Publishing Insights</h4>
+                <h2 style="font-family: 'Playfair Display', serif; font-size: 2.5rem; font-weight: 800; color: #333;" data-aos="fade-up" data-aos-delay="100">Latest From Our Blog</h2>
+            </div>
+            
+            <div class="articles-home-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px;">
+                <% if(typeof latestArticles !== 'undefined' && latestArticles.length > 0) { %>
+                    <% latestArticles.forEach((article, index) => { %>
+                    <div class="a-home-card" data-aos="fade-up" data-aos-delay="<%= index * 100 %>" style="background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 15px 35px rgba(0,0,0,0.05); transition: transform 0.3s ease;">
+                        <div style="height: 200px; background: url('<%= article.imageUrl %>') no-repeat center center/cover;"></div>
+                        <div style="padding: 30px;">
+                            <span style="font-size: 0.75rem; font-weight: 700; color: var(--secondary-color); text-transform: uppercase;"><%= article.category %> • <%= article.readTime %></span>
+                            <h3 style="font-family: 'Playfair Display', serif; font-size: 1.3rem; margin: 12px 0; line-height: 1.4;"><%= article.title %></h3>
+                            <p style="font-size: 0.9rem; color: #666; margin-bottom: 20px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;"><%= article.excerpt %></p>
+                            <a href="/articles/<%= article.slug %>" style="font-weight: 700; color: var(--primary-color); text-decoration: none; border-bottom: 2px solid var(--secondary-color); padding-bottom: 2px; font-size: 0.85rem;">READ FULL ARTICLE →</a>
+                        </div>
+                    </div>
+                    <% }); %>
+                <% } %>
+            </div>
+
+            <div style="text-align: center; margin-top: 50px;" data-aos="fade-up">
+                <a href="/articles" class="btn" style="background: var(--primary-color); color: white; padding: 12px 40px; border-radius: 5px; font-weight: 700;">View All Insights</a>
+            </div>
+        </div>
     </section>
 
+    <!-- FAQ Section -->
+    <section class="faqs" style="padding: 100px 0; background-color: white;">
+        <div class="container" style="max-width: 800px;">
+            <div class="section-title" style="text-align: center; margin-bottom: 60px;">
+                <h2 data-aos="fade-up" style="font-family: 'Playfair Display', serif; font-size: 2.5rem; font-weight: 800;">Frequently Asked <span style="color: var(--secondary-color);">Questions</span></h2>
+                <p data-aos="fade-up" data-aos-delay="100">Everything you need to know about our publishing process.</p>
+            </div>
+
+            <div class="faq-container">
+                <details class="faq-item" data-aos="fade-up">
+                    <summary>How long does the publishing process take?</summary>
+                    <div class="faq-content">Typically, a full book project (writing, editing, and design) takes between 3 to 6 months depending on the scope and genre.</div>
+                </details>
+
+                <details class="faq-item" data-aos="fade-up" data-aos-delay="50">
+                    <summary>Will I own 100% of the rights to my book?</summary>
+                    <div class="faq-content">Yes, 100%. At Infranex, authors retain full ownership of their royalties and intellectual property rights—always and forever.</div>
+                </details>
+
+                <details class="faq-item" data-aos="fade-up" data-aos-delay="100">
+                    <summary>Which platforms will my book be published on?</summary>
+                    <div class="faq-content">We distribute to global retailers including Amazon (Kindle/Print), Barnes &amp; Noble, Apple Books, Google Play, and Ingram.</div>
+                </details>
+
+                <details class="faq-item" data-aos="fade-up" data-aos-delay="150">
+                    <summary>Is your ghostwriting service completely confidential?</summary>
+                    <div class="faq-content">Absolutely. We operate under strict Non-Disclosure Agreements (NDAs). Your story is yours, and we remain anonymous literary architects.</div>
+                </details>
+
+                <details class="faq-item" data-aos="fade-up" data-aos-delay="200">
+                    <summary>Do you provide marketing support after launch?</summary>
+                    <div class="faq-content">Yes! Every package includes a strategic launch plan, SEO optimization for retail pages, and guidance on long-term author branding.</div>
+                </details>
+            </div>
+        </div>
+
+        <style>
+            .faq-container { margin-top: 40px; }
+            .faq-item { background: #f9f9fb; border-radius: 12px; margin-bottom: 15px; border: 1px solid #eee; overflow: hidden; }
+            .faq-item summary { padding: 20px 25px; font-weight: 700; cursor: pointer; display: flex; justify-content: space-between; align-items: center; list-style: none; font-size: 1.1rem; color: var(--primary-color); }
+            .faq-item summary::-webkit-details-marker { display: none; }
+            .faq-item summary::after { content: '+'; font-size: 1.5rem; color: var(--secondary-color); transition: transform 0.3s; }
+            .faq-item[open] summary::after { content: '−'; transform: rotate(180deg); }
+            .faq-content { padding: 0 25px 25px; color: #666; font-size: 1rem; line-height: 1.6; }
+            .a-home-card:hover { transform: translateY(-10px); }
+        </style>
+    </section>
 
     <%- include('partials/footer') %>
