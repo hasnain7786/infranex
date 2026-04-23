@@ -1,4 +1,11 @@
 <footer class="main-footer <%= (typeof title !== 'undefined' && title.includes('Home')) ? '' : 'footer-no-cta' %>">
+    <!-- Floating Live Chat Button -->
+    <div class="join-live-chat" onclick="Tawk_API.toggle()" style="position: fixed; bottom: 30px; right: 30px; background: #000; color: #fff; padding: 12px 25px; border-radius: 50px; cursor: pointer; z-index: 9999; display: flex; align-items: center; gap: 10px; font-weight: 700; box-shadow: 0 10px 25px rgba(0,0,0,0.3); transition: 0.3s; border: 1px solid rgba(255,255,255,0.1);">
+        <i class="fas fa-comments"></i>
+        <span>Join Live Chat</span>
+        <span style="background: #ff3b30; color: #fff; width: 18px; height: 18px; border-radius: 50%; font-size: 11px; display: flex; align-items: center; justify-content: center; position: absolute; top: -5px; right: 5px; font-weight: 800; border: 2px solid #000;">1</span>
+    </div>
+
     <% if (typeof title !=='undefined' && title.includes('Home')) { %>
         <div class="footer-cta-wrapper">
             <div class="container">
