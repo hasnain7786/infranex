@@ -1212,27 +1212,3 @@ textarea:focus {
         height: 70px;
     }
 }
-/* Footer 5-Column Responsive Fix */
-@media (max-width: 1024px) {
-    .footer-content {
-        grid-template-columns: repeat(2, 1fr) !important;
-        gap: 40px !important;
-    }
-}
-
-@media (max-width: 600px) {
-    .footer-content {
-        grid-template-columns: 1fr !important;
-        gap: 30px !important;
-    }
-    .footer-bottom-flex {
-        justify-content: center !important;
-        text-align: center !important;
-    }
-    .legal-links {
-        margin-top: 10px;
-    }
-    .legal-links a {
-        margin: 0 10px !important;
-    }
-}
