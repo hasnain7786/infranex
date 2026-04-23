@@ -3,7 +3,7 @@
     <div class="modal-content" style="background-color: #fdfcf0; margin: 10% auto; padding: 40px; border: 1px solid #dcb348; width: 90%; max-width: 500px; border-radius: 15px; position: relative; box-shadow: 0 20px 40px rgba(0,0,0,0.2);">
         <span onclick="closeNewsletterModal()" style="color: #aaa; position: absolute; right: 20px; top: 15px; font-size: 28px; font-weight: bold; cursor: pointer;">&times;</span>
         
-        <div style="text-align: center;">
+        <div id="newsletterFormContainer" style="text-align: center;">
             <div style="width: 70px; height: 70px; background: #3d2c5e; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; color: #dcb348; font-size: 1.8rem;">
                 <i class="fas fa-envelope-open-text"></i>
             </div>
@@ -17,6 +17,15 @@
             </form>
             <p style="font-size: 0.8rem; color: #999; margin-top: 20px;"><i class="fas fa-lock"></i> We respect your privacy. Unsubscribe anytime.</p>
         </div>
+
+        <div id="newsletterSuccessContainer" style="display: none; text-align: center; padding: 20px 0;">
+            <div style="width: 70px; height: 70px; background: #d4edda; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; color: #28a745; font-size: 2rem;">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <h2 style="font-family: 'Playfair Display', serif; color: #155724; margin-bottom: 10px; font-weight: 800;">Success!</h2>
+            <p style="color: #155724; font-size: 1.1rem; font-weight: 500;">Thank you for subscribing to our newsletter. You're now on our exclusive list!</p>
+            <button onclick="closeNewsletterModal()" style="margin-top: 25px; padding: 10px 25px; background: #3d2c5e; color: #fff; border: none; border-radius: 5px; cursor: pointer; font-weight: 600;">Close</button>
+        </div>
     </div>
 </div>
 
@@ -27,13 +36,29 @@ function openNewsletterModal() {
 
 function closeNewsletterModal() {
     document.getElementById('newsletterModal').style.display = 'none';
+    // Clear URL parameter after closing if desired
+    if (window.location.search.includes('subscribed=true')) {
+        const url = new URL(window.location);
+        url.searchParams.delete('subscribed');
+        window.history.replaceState({}, document.title, url);
+    }
 }
+
+// Check URL parameters on load
+window.addEventListener('load', function() {
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.get('subscribed') === 'true') {
+        document.getElementById('newsletterFormContainer').style.display = 'none';
+        document.getElementById('newsletterSuccessContainer').style.display = 'block';
+        openNewsletterModal();
+    }
+});
 
 // Close when clicking outside
 window.onclick = function(event) {
     var modal = document.getElementById('newsletterModal');
     if (event.target == modal) {
-        modal.style.display = "none";
+        closeNewsletterModal();
     }
 }
 </script>
