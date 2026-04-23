@@ -142,20 +142,8 @@
         }
     }
 
-    // Position Tawk widget to the left on mobile to avoid overlapping the right-side drawer
-    Tawk_API.customStyle = {
-        visibility: {
-            desktop: {
-                position: 'br',
-                xOffset: '15px',
-                yOffset: '15px'
-            },
-            mobile: {
-                position: 'bl',
-                xOffset: '15px',
-                yOffset: '20px'
-            }
-        }
+    Tawk_API.onLoad = function() {
+        Tawk_API.hideWidget();
     };
 
     (function () {
