@@ -86,45 +86,10 @@
                                 <span>Mon - Fri, 9AM - 6PM</span>
                             </li>
                         </ul>
-                    </div>
 
-                    <!-- Newsletter Signup -->
-                    <div class="footer-newsletter">
-                        <h4>Stay Informed</h4>
-                        <p>Get expert publishing tips, industry insights, and exclusive offers delivered to your inbox.</p>
-                        <% if (typeof query !== 'undefined' && query.subscribed === 'true') { %>
-                            <div style="background: rgba(220,179,72,0.15); border: 1px solid rgba(220,179,72,0.3); border-radius: 8px; padding: 14px 18px; color: #dcb348; font-weight: 600; font-size: 0.9rem;">
-                                <i class="fas fa-check-circle"></i> Thank you for subscribing!
-                            </div>
-                        <% } else { %>
-                        <form class="newsletter-form" action="/newsletter" method="POST">
-                            <input
-                                type="text"
-                                name="name"
-                                placeholder="Your Name"
-                                class="newsletter-input"
-                                required
-                            />
-                            <input
-                                type="email"
-                                name="email"
-                                placeholder="Your Email Address"
-                                class="newsletter-input"
-                                required
-                            />
-                            <button type="submit" class="newsletter-btn">
-                                <i class="fas fa-paper-plane"></i>&nbsp; Subscribe Now
-                            </button>
-                        </form>
-                        <% } %>
-                        <p class="newsletter-trust">
-                            <i class="fas fa-lock"></i>
-                            We respect your privacy. No spam, unsubscribe anytime.
-                        </p>
-                    </div>
 
+                    </div>
                 </div>
-            </div>
 
                 <div class="footer-bottom">
                     <div class="footer-bottom-flex">
