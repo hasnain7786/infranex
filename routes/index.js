@@ -98,6 +98,29 @@ router.post('/leads', async (req, res) => {
     }
 });
 
+// ── Newsletter Subscription ────────────────────────────────────
+router.post('/newsletter', async (req, res) => {
+    try {
+        const { name, email } = req.body;
+        const newLead = new Lead({
+            name,
+            email,
+            phone: '',
+            package: 'Newsletter Subscription',
+            message: 'Subscribed via footer newsletter form.',
+            source: 'newsletter',
+        });
+        await newLead.save();
+        // Redirect back to referring page with success signal
+        const referer = req.headers.referer || '/';
+        const separator = referer.includes('?') ? '&' : '?';
+        res.redirect(`${referer}${separator}subscribed=true#footer`);
+    } catch (err) {
+        console.error('Newsletter save error:', err);
+        res.redirect('/?error=true');
+    }
+});
+
 // ── Legacy redirects (keep old URLs working) ──────────────────
 router.post('/contact', (req, res) => {
     // Forward old contact submissions to /leads
