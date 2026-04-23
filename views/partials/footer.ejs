@@ -14,90 +14,88 @@
             </div>
         </div>
         <% } %>
-            <div class="container">
-                <div class="footer-content">
+                <div class="footer-content" style="display: grid; grid-template-columns: 1.2fr 0.8fr 0.8fr 1fr 1.2fr; gap: 30px; padding-bottom: 50px; border-bottom: 1px solid rgba(255,255,255,0.1);">
+                    <!-- Column 1: Brand Info -->
                     <div class="footer-info">
-                        <h3
-                            style="font-family: 'Playfair Display', serif; font-size: 1.8rem; font-weight: 800; color: #fff; margin-bottom: 15px; letter-spacing: 0.5px; opacity: 0.95;">
+                        <h3 style="font-family: 'Playfair Display', serif; font-size: 1.6rem; font-weight: 800; color: #fff; margin-bottom: 20px;">
                             Infranex Publishers
                         </h3>
-                        <p class="footer-desc">
-                            Empowering authors to share their stories with the world through professional publishing and
-                            premium
-                            Audio Book services. Your vision, our expertise.
+                        <p style="font-size: 0.9rem; color: rgba(255,255,255,0.75); line-height: 1.6; margin-bottom: 20px;">
+                            Empowering authors to share their stories with the world through professional publishing and premium Audio Book services.
                         </p>
-                        <div class="social-links-container">
-                            <a href="https://www.facebook.com/profile.php?id=61588078614477&mibextid=wwXIfr"
-                                target="_blank" class="social-link facebook" aria-label="Facebook">
-                                <i class="fab fa-facebook-f"></i>
-                            </a>
-                            <a href="https://www.instagram.com/ms_infranex?igsh=MXZhYWlmdzdpZTR4Mg%3D%3D&utm_source=qr"
-                                target="_blank" class="social-link instagram" aria-label="Instagram">
-                                <i class="fab fa-instagram"></i>
-                            </a>
+                        <div class="social-links-container" style="display: flex; gap: 15px;">
+                            <a href="https://www.facebook.com/profile.php?id=61588078614477&mibextid=wwXIfr" target="_blank" style="color: #fff; font-size: 1.1rem;"><i class="fab fa-facebook-f"></i></a>
+                            <a href="https://www.instagram.com/ms_infranex?igsh=MXZhYWlmdzdpZTR4Mg%3D%3D&utm_source=qr" target="_blank" style="color: #fff; font-size: 1.1rem;"><i class="fab fa-instagram"></i></a>
                         </div>
                     </div>
 
-                    <div class="footer-links-group">
-                        <div class="footer-links">
-                            <h4>Quick Links</h4>
-                            <ul>
-                                <li><a href="/"><i class="fas fa-chevron-right"></i> Home</a></li>
-                                <li><a href="/about"><i class="fas fa-chevron-right"></i> About Us</a></li>
-                                <li><a href="/services"><i class="fas fa-chevron-right"></i> Services</a></li>
-                                <li><a href="/audiobook-services"><i class="fas fa-chevron-right"></i> Audio Book
-                                        Services</a>
-                                </li>
-                                <li><a href="/pricing"><i class="fas fa-chevron-right"></i> Pricing</a></li>
-                                <li><a href="/articles"><i class="fas fa-chevron-right"></i> Articles</a></li>
-                            </ul>
-                        </div>
-                        <div class="footer-links">
-                            <h4>Top Services</h4>
-                            <ul>
-                                <li><a href="/services"><i class="fas fa-chevron-right"></i> Ghostwriting</a></li>
-                                <li><a href="/services"><i class="fas fa-chevron-right"></i> Book Editing</a></li>
-                                <li><a href="/audiobook-services"><i class="fas fa-chevron-right"></i> Audio Book
-                                        Services</a></li>
-                                <li><a href="/services"><i class="fas fa-chevron-right"></i> Cover Design</a></li>
-                                <li><a href="/contact"><i class="fas fa-chevron-right"></i> Consultation</a></li>
-                            </ul>
-                        </div>
+                    <!-- Column 2: Quick Links -->
+                    <div class="footer-links">
+                        <h4 style="color: #fff; font-size: 1.1rem; font-weight: 700; margin-bottom: 25px; position: relative;">Quick Links</h4>
+                        <ul style="list-style: none; padding: 0;">
+                            <li style="margin-bottom: 12px;"><a href="/" style="color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.9rem;">Home</a></li>
+                            <li style="margin-bottom: 12px;"><a href="/about" style="color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.9rem;">About Us</a></li>
+                            <li style="margin-bottom: 12px;"><a href="/services" style="color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.9rem;">Services</a></li>
+                            <li style="margin-bottom: 12px;"><a href="/pricing" style="color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.9rem;">Pricing</a></li>
+                            <li style="margin-bottom: 12px;"><a href="/articles" style="color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.9rem;">Articles</a></li>
+                        </ul>
                     </div>
 
+                    <!-- Column 3: Top Services -->
+                    <div class="footer-links">
+                        <h4 style="color: #fff; font-size: 1.1rem; font-weight: 700; margin-bottom: 25px; position: relative;">Top Services</h4>
+                        <ul style="list-style: none; padding: 0;">
+                            <li style="margin-bottom: 12px;"><a href="/services" style="color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.9rem;">Ghostwriting</a></li>
+                            <li style="margin-bottom: 12px;"><a href="/services" style="color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.9rem;">Book Editing</a></li>
+                            <li style="margin-bottom: 12px;"><a href="/audiobook-services" style="color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.9rem;">Audio Books</a></li>
+                            <li style="margin-bottom: 12px;"><a href="/services" style="color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.9rem;">Cover Design</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Column 4: Contact Us -->
                     <div class="footer-contact">
-                        <h4>Contact Us</h4>
-                        <ul class="contact-info-list">
-                            <li>
-                                <i class="fas fa-map-marker-alt"></i>
-                                <span>6545 Market Ave. North STE 100 North Canton, OH 44721</span>
+                        <h4 style="color: #fff; font-size: 1.1rem; font-weight: 700; margin-bottom: 25px; position: relative;">Contact Us</h4>
+                        <ul style="list-style: none; padding: 0;">
+                            <li style="display: flex; gap: 10px; margin-bottom: 15px; color: rgba(255,255,255,0.75); font-size: 0.85rem;">
+                                <i class="fas fa-map-marker-alt" style="color: #dcb348; margin-top: 3px;"></i>
+                                <span>6545 Market Ave. North Canton, OH</span>
                             </li>
-                            <li>
-                                <i class="fas fa-envelope"></i>
-                                <span><a
-                                        href="mailto:Team@infranexpublishers.com">Team@infranexpublishers.com</a></span>
+                            <li style="display: flex; gap: 10px; margin-bottom: 15px; color: rgba(255,255,255,0.75); font-size: 0.85rem;">
+                                <i class="fas fa-envelope" style="color: #dcb348; margin-top: 3px;"></i>
+                                <span>Team@infranexpublishers.com</span>
                             </li>
-                            <li>
-                                <i class="fas fa-phone-alt"></i>
+                            <li style="display: flex; gap: 10px; color: rgba(255,255,255,0.75); font-size: 0.85rem;">
+                                <i class="fas fa-phone-alt" style="color: #dcb348; margin-top: 3px;"></i>
                                 <span>+1 325 648 0085</span>
                             </li>
-                            <li>
-                                <i class="far fa-clock"></i>
-                                <span>Mon - Fri, 9AM - 6PM</span>
-                            </li>
                         </ul>
+                    </div>
 
-
+                    <!-- Column 5: Newsletter -->
+                    <div class="footer-newsletter">
+                        <h4 style="color: #fff; font-size: 1.1rem; font-weight: 700; margin-bottom: 25px; position: relative;">Newsletter</h4>
+                        <p style="font-size: 0.85rem; color: rgba(255,255,255,0.7); margin-bottom: 15px;">Get publishing tips and exclusive offers.</p>
+                        <% if (typeof query !== 'undefined' && query.subscribed === 'true') { %>
+                            <div style="background: rgba(220,179,72,0.2); padding: 10px; border-radius: 5px; color: #dcb348; font-size: 0.8rem;">
+                                <i class="fas fa-check-circle"></i> Subscribed!
+                            </div>
+                        <% } else { %>
+                        <form action="/newsletter" method="POST" style="display: flex; flex-direction: column; gap: 10px;">
+                            <input type="text" name="name" placeholder="Name" required style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); padding: 10px; border-radius: 5px; color: #fff; font-size: 0.85rem;">
+                            <input type="email" name="email" placeholder="Email" required style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); padding: 10px; border-radius: 5px; color: #fff; font-size: 0.85rem;">
+                            <button type="submit" style="background: #dcb348; color: #3d2c5e; border: none; padding: 10px; border-radius: 5px; font-weight: 700; cursor: pointer; text-transform: uppercase; font-size: 0.8rem;">Subscribe</button>
+                        </form>
+                        <% } %>
                     </div>
                 </div>
 
-                <div class="footer-bottom">
-                    <div class="footer-bottom-flex">
-                        <p>&copy; 2026 Infranex Publishers. All Rights Reserved.</p>
+                <div class="footer-bottom" style="padding-top: 30px;">
+                    <div class="footer-bottom-flex" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px;">
+                        <p style="margin: 0; font-size: 0.85rem; color: rgba(255,255,255,0.6);">&copy; 2026 Infranex Publishers. All Rights Reserved.</p>
                         <div class="legal-links">
-                            <a href="/privacy-policy">Privacy Policy</a>
-                            <a href="/terms-of-service">Terms of Service</a>
-                            <a href="/disclaimer">Disclaimer</a>
+                            <a href="/privacy-policy" style="color: rgba(255,255,255,0.6); text-decoration: none; margin-left: 20px; font-size: 0.85rem;">Privacy Policy</a>
+                            <a href="/terms-of-service" style="color: rgba(255,255,255,0.6); text-decoration: none; margin-left: 20px; font-size: 0.85rem;">Terms of Service</a>
+                            <a href="/disclaimer" style="color: rgba(255,255,255,0.6); text-decoration: none; margin-left: 20px; font-size: 0.85rem;">Disclaimer</a>
                         </div>
                     </div>
                 </div>
