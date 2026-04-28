@@ -1,4 +1,7 @@
 User-agent: *
 Allow: /
+Disallow: /leads
+Disallow: /newsletter
+Disallow: /admin/
 
 Sitemap: https://infranexpublishers.com/sitemap.xml
