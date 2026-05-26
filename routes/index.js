@@ -47,7 +47,13 @@ router.get('/articles/:slug', (req, res) => {
         return res.redirect('/articles');
     }
     
-    res.render('article-post', { title: `${article.title} | Infranex Publishers`, article });
+    // Get 3 other unique random articles for the dynamic "Related Articles" section
+    const relatedArticles = articles
+        .filter(a => a.slug !== slug)
+        .sort(() => 0.5 - Math.random())
+        .slice(0, 3);
+    
+    res.render('article-post', { title: `${article.title} | Infranex Publishers`, article, relatedArticles });
 });
 
 router.get('/sitemap.xml', (req, res) => {

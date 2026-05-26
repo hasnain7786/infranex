@@ -101,7 +101,8 @@
         }, 300);
     }
     
-    // Auto-popup after 2.5 seconds if it's the first time
+    // Auto-popup disabled for Google AdSense compliance (preventing automatic layout overlays)
+    /*
     window.addEventListener('DOMContentLoaded', () => {
         if(!sessionStorage.getItem('discountSeen')) {
             setTimeout(() => {
@@ -110,6 +111,7 @@
             }, 2500);
         }
     });
+    */
 
     // AJAX Form Submission
     const discountForm = document.getElementById('discountForm');
