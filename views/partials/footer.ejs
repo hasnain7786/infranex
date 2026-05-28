@@ -155,6 +155,30 @@
     })();
 </script>
 <!--End of Tawk.to Script-->
+<!-- Cookie Consent Banner -->
+<div id="cookie-consent-banner" style="display: none; position: fixed; bottom: 0; left: 0; right: 0; background: #fff; padding: 20px; box-shadow: 0 -5px 25px rgba(0,0,0,0.1); z-index: 10000; text-align: center; border-top: 3px solid var(--primary-color);">
+    <div class="container" style="display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 20px;">
+        <p style="margin: 0; font-size: 0.95rem; color: #333; max-width: 800px; text-align: left;">
+            We use cookies to personalize content and ads, to provide social media features, and to analyze our traffic. We also share information about your use of our site with our social media, advertising (including Google AdSense), and analytics partners. By continuing to use our site, you accept our use of cookies. <a href="/privacy-policy" style="color: var(--primary-color); font-weight: 700;">Learn more</a>.
+        </p>
+        <div style="display: flex; gap: 15px;">
+            <button onclick="acceptCookies()" style="background: var(--primary-color); color: white; border: none; padding: 10px 25px; border-radius: 5px; font-weight: 700; cursor: pointer; transition: 0.3s;">Accept & Continue</button>
+        </div>
+    </div>
+</div>
+<script>
+    function acceptCookies() {
+        localStorage.setItem('cookieConsent', 'true');
+        document.getElementById('cookie-consent-banner').style.display = 'none';
+    }
+    
+    document.addEventListener("DOMContentLoaded", function() {
+        if (!localStorage.getItem('cookieConsent')) {
+            document.getElementById('cookie-consent-banner').style.display = 'block';
+        }
+    });
+</script>
+
 </body>
 
 </html>
